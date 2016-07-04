@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme" content="hugo-academic-group">
+
+    {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.role }}<meta name="description" content="{{ . }}">{{ end }}
+
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css">
+    <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/academicons.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/hugo-academic-group.css">
+
+    {{ range .Site.Params.custom_css }}
+    <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/{{ . }}">
+    {{ end }}
+
+
+    <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+</head>
+<body id="top_body">
