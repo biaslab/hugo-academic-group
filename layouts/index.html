@@ -1,8 +1,9 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
+{{ partial "slogan.html" . }}
 
 <!-- Selected Publications Section -->
-{{ $pubs_selected_len := len (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
+<!-- {{ $pubs_selected_len := len (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
 {{ if gt $pubs_selected_len 0 }}
 <section id="publications" class="home-section">
     <div class="container">
@@ -11,7 +12,7 @@
                 <h1>{{ with .Site.Params.publications_selected.title }}{{ . | markdownify }}{{ end }}</h1>
                 {{ with .Site.Params.publications_selected.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
-            <div class="col-xs-12 col-md-8">
+            <div class="col-lg-4 col-sm-6">
                 {{ if .Site.Params.publications_selected.detailed_list }}
                 {{ range (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
                 {{ partial "publication_li_detailed" . }}
@@ -26,14 +27,14 @@
             </div>
         </div>
     </div>
-</section>
-{{ end }}
+</section> -->
+<!-- {{ end }} -->
 
 
 <!-- Publications Section -->
 {{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
 {{ if gt $pubs_len 0 }}
-<section {{ if eq $pubs_selected_len 0 }}id="publications" {{ end }}class="home-section">
+<section id="publications" class="home-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
@@ -65,51 +66,6 @@
     </div>
 </section>
 {{ end }}
-
-
-<!-- Blog Posts Section -->
-{{ $posts_len := len (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
-{{ if gt $posts_len 0 }}
-<section id="posts" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1>{{ with .Site.Params.posts.title }}{{ . | markdownify }}{{ end }}</h1>
-                {{ with .Site.Params.posts.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-                {{ if gt $posts_len .Site.Params.posts.count }}
-                <p class="view-all">
-                    <a href="{{ .Site.BaseURL }}post/">
-                        {{ with .Site.Params.posts.str_all }}{{ . | markdownify }}{{ end }}
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </p>
-                {{ end }}
-            </div>
-            <div class="col-xs-12 col-md-8">
-                {{ range first .Site.Params.posts.count (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
-                <div class="article-list-item" itemscope itemprop="blogPost">
-                    {{ if .Params.image }}
-                    <a href="{{ .Permalink }}">
-                        <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
-                    </a>
-                    {{end}}
-                    <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                    <p class="article-style" itemprop="articleBody">
-                        {{ .Params.short_text }}
-                    </p>
-                    <p class="read-more">
-                        <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
-                            {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
-                        </a>
-                    </p>
-                </div>
-                {{ end }}
-            </div>
-        </div>
-    </div>
-</section>
-{{ end }}
-
 
 <!-- Projects Section -->
 {{ $projects_len := len (where .Data.Pages "Type" "project") }}
@@ -155,24 +111,59 @@
 {{ end }}
 
 
-<!-- Custom Sections -->
-{{ range $index, $page := where .Data.Pages "Type" "home" }}
-{{ if and (isset .Params "section_id") (not (eq .Params.section_id 0)) }}
-{{ $title_words := split $page.Title " " }}
-<section id="{{ range $k, $v := $title_words }}{{ if eq $k 0 }}{{ . | urlize | lower }}{{ end }}{{ end }}" class="home-section">
+<!-- Members -->
+<section id="members" class="home-section">
+    <div class="container-fluid">
+        <h1 class="section-heading"> Members </h1>
+        <div class="row">
+                {{ range (where .Data.Pages "Type" "member") | shuffle | first 3 }}
+                        {{ partial "member_simple" . }}
+                {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Section -->
+{{ $posts_len := len (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
+{{ if gt $posts_len 0 }}
+<section id="posts" class="home-section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1>{{ title $page.Title }}</h1>
-                {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+                <h1>{{ with .Site.Params.posts.title }}{{ . | markdownify }}{{ end }}</h1>
+                {{ with .Site.Params.posts.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+                {{ if gt $posts_len .Site.Params.posts.count }}
+                <p class="view-all">
+                    <a href="{{ .Site.BaseURL }}post/">
+                        {{ with .Site.Params.posts.str_all }}{{ . | markdownify }}{{ end }}
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </p>
+                {{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
-                {{ $page.Content }}
+                {{ range first .Site.Params.posts.count (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
+                <div class="article-list-item" itemscope itemprop="blogPost">
+                    {{ if .Params.image }}
+                    <a href="{{ .Permalink }}">
+                        <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
+                    </a>
+                    {{end}}
+                    <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
+                    <p class="article-style" itemprop="articleBody">
+                        {{ .Params.short_text }}
+                    </p>
+                    <p class="read-more">
+                        <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
+                            {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
+                        </a>
+                    </p>
+                </div>
+                {{ end }}
             </div>
         </div>
     </div>
 </section>
-{{ end }}
 {{ end }}
 
 

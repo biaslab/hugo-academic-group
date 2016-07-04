@@ -624,6 +624,16 @@ nav#navbar-main li {
     }
 }
 
+header{
+    background-image: url("/img/header.jpg");
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-position: center;
+}
+
 /*************************************************
  *  Tables
  **************************************************/
