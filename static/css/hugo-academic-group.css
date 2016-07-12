@@ -217,7 +217,7 @@ hr {
 }
 
 .portrait {
-    background-image: url('../img/portrait.jpg');
+    background-image: url('../img/portraits/portrait.jpg');
     width: 200px;
     height: 200px;
     margin: 0 auto;
@@ -228,7 +228,7 @@ hr {
 }
 
 .small-portrait {
-    background-image: url('../img/portrait.jpg');
+    background-image: url('../img/portraits/portrait.jpg');
     width: 100px;
     height: 100px;
     margin: 0 auto;

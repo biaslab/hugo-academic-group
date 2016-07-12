@@ -5,7 +5,7 @@
             </a>
             <div class="portrait-title">
                 <h2 itemprop="name"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h2>
-                {{ range .Params.orgs }}
+                {{ range .Params.organizations }}
                     <h4>{{ .role }}, {{.name}}</h4>
                 {{ end }}
             </div>

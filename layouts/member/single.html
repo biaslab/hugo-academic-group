@@ -11,8 +11,8 @@
             <div class="portrait-title">
                 <h2 itemprop="name">{{ .Params.name }}</h2>
                 <h3 itemprop="jobTitle">{{ .Params.role }}</h3>
-                {{ range .Params.organisations }}
-                    {{ with . }}<h3 itemprop="worksFor">{{ . }}</h3>{{ end }}
+                {{ range .Params.organizations }}
+                    <h4>{{ .role }}, {{.name}}</h4>
                 {{ end }}
             </div>
 
@@ -35,13 +35,6 @@
 
     <div class="visible-sm visible-xs"></div>
     <div class="col-xs-12 col-md-8" itemprop="description">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3>Biography</h3>
-                 <div class="article-style">{{ .Content }}</div>
-            </div>
-        </div>
-
         <div class="row">
 
             <div class="col-sm-5">
@@ -71,7 +64,12 @@
             </div>
 
         </div>
-
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Biography</h3>
+                 <div class="article-style">{{ .Content }}</div>
+            </div>
+        </div>
     </div>
 </div>
 </div>

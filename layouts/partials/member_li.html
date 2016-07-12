@@ -9,7 +9,7 @@
     </div>
 
     <div class="col-md-6">
-        {{ range .Params.orgs }}
+        {{ range .Params.organizations }}
             <h4>{{ .role }}, {{.name}}</h4>
             {{ end }}
         {{ .Params.short_bio }}

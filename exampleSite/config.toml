@@ -1,0 +1,102 @@
+layoutdir = "themes/hugo-academic-group/layouts"
+publishdir = "public"
+static = ""
+builddrafts = false
+baseurl = "http://spsbrats.gtihub.io/"
+canonifyurls = true
+theme = "hugo-academic-group"
+title = "SPS Brats"
+math = true
+copyright = "&copy; 2016 Le SPS Brats"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+
+[params]
+  description = "Website of SPS Brats research group"
+  author = "SPS Brats"
+  email = "spsbrats@example.org"
+  address = "5612 AZ Eindhoven \n De Rondom, 2"
+
+  slogan = "SPS Brats"
+  slogan_text = "Bayesian Machine Learning for Digital Signal Processing"
+
+  # Selected Publications section.
+  [params.publications_selected]
+    detailed_list = true
+    title = "Selected Publications"
+    subtitle = ""
+
+  # Publications section.
+  # Section will only be displayed if there are publications in `content/publication/`.
+  [params.publications]
+    count = 5
+    detailed_list = false
+    title = "Publications"
+    subtitle = ""
+    str_all = "More Publications"
+
+  # Posts section.
+  # Section will only be displayed if there are posts in `content/post/`.
+  [params.posts]
+    count = 2
+    title = "Blog"
+    subtitle = ""
+    str_all = "More Posts"
+    str_read_more = "Read more"
+
+  # Projects section.
+  # Section will only be displayed if there are projects in `content/project/`.
+  [params.projects]
+    title = "Projects"
+    subtitle = ""
+    count = 3
+    str_all = "More Projects"
+
+  # Contact section.
+  [params.contact]
+    enable = true
+    title = "Contact"
+    subtitle = ""
+    autolink = false  # Automatically link email and phone?
+
+  # Navigation Links
+  #   The weight parameter defines the order that the links will appear in.
+
+  [[menu.main]]
+      name = "Home"
+      url = "#top"
+      weight = 1
+
+  [[menu.main]]
+      name = "Research"
+      url = "/research"
+      weight = 2
+
+  [[menu.main]]
+      name = "Publications"
+      url = "#publications"
+      weight = 3
+
+    [[menu.main]]
+      name = "Projects"
+      url = "#projects"
+      weight = 4
+
+  [[menu.main]]
+      name = "Members"
+      url = "#members"
+      weight = 5
+
+  [[menu.main]]
+      name = "Blog"
+      url = "#posts"
+      weight = 6
+
+
+  [[menu.main]]
+      name = "Contact"
+      url = "#contact"
+      weight = 7

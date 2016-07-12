@@ -62,7 +62,7 @@
                         {{ if .Content }}</a >{{ else }}{{ with .Params.external_link }}</a>{{ end }}{{ end }}
                         </span>
 
-                        {{ with .Params.summary }}<p class="project-summary">{{ . }}</p>{{ end }}
+                        {{ with .Params.short_description }}<p class="project-summary">{{ . }}</p>{{ end }}
 
                         {{ if isset .Params "tags" }}
                         {{ $tagsLen := len .Params.tags }}
