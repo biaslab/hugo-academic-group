@@ -18,6 +18,40 @@ html {
     box-sizing: inherit;
 }
 
+header{
+    background-image: url("/img/header.jpg");
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    min-height: 100%;
+}
+
+.header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+}
+
+.header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+.header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7);
+}
+
 .row:after,
 .row:before {
     content: " ";
@@ -31,6 +65,7 @@ p {
     font-size: 16px;
     line-height: 1.65;
     min-height: 100%;
+    height: 100%;
 }
 
 body {
@@ -124,15 +159,9 @@ pre {
     overflow: auto;
 }
 
-.space-below {
-    margin-bottom: 50px;
+hr {
+    max-width: 80px;
 }
-@media screen and (max-width: 768px) {
-    .space-below {
-        margin-bottom: 10px;
-    }
-}
-
 /*************************************************
  *  Home Sections
  **************************************************/
@@ -148,8 +177,15 @@ pre {
 }
 
 .home-section:first-of-type {
-    padding-top: 0;
+    padding: 110px 0 110px 0;
 }
+
+@media screen and (max-width: 768px) {
+    .home-section:first-of-type {
+        padding: 60px 0 60px 0;
+    }
+}
+
 
 .home-section:nth-of-type(even) {
     background-color: rgb(247, 247, 247);
@@ -157,6 +193,10 @@ pre {
 
 .section-heading h1 {
     margin: 0 0 10px 0;
+}
+
+.section-heading h1 a {
+    color: #000000;
 }
 
 .section-heading p {
@@ -176,7 +216,7 @@ pre {
     position: relative;
 }
 
-#profile .portrait {
+.portrait {
     background-image: url('../img/portrait.jpg');
     width: 200px;
     height: 200px;
@@ -187,16 +227,29 @@ pre {
     -moz-background-size: cover;
 }
 
-#profile .portrait-title h2 {
+.small-portrait {
+    background-image: url('../img/portrait.jpg');
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.portrait-title h2 {
     font-size: 1.75em;
+    text-align: center;
     font-weight: 300;
     color: #000000;
     margin: 20px 0 10px 0;
 }
 
-#profile .portrait-title h3 {
+.portrait-title h3 {
     font-size: 1.13em;
     font-weight: 300;
+    text-align: center;
     color: #AAAAAA;
     margin: 0px 0 10px 0;
 }
@@ -542,7 +595,7 @@ footer a#back_to_top i {
  **************************************************/
 
 .navbar {
-    min-height:60px !important;
+    min-height:5% !important;
 }
 
 .navbar-default {
@@ -624,15 +677,6 @@ nav#navbar-main li {
     }
 }
 
-header{
-    background-image: url("/img/header.jpg");
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    background-position: center;
-}
 
 /*************************************************
  *  Tables

@@ -1,5 +1,7 @@
 {{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
 
+<div class="container">
 <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <div class="col-xs-12 col-md-4">
         <div id="profile">
@@ -32,7 +34,6 @@
     </div>
 
     <div class="visible-sm visible-xs"></div>
-    {{ .Content }}
     <div class="col-xs-12 col-md-8" itemprop="description">
         <div class="row">
             <div class="col-sm-12">
@@ -73,5 +74,6 @@
 
     </div>
 </div>
-
+</div>
+{{ partial "footer_container.html" . }}
 {{ partial "footer.html" . }}

@@ -2,35 +2,6 @@
 {{ partial "navbar.html" . }}
 {{ partial "slogan.html" . }}
 
-<!-- Selected Publications Section -->
-<!-- {{ $pubs_selected_len := len (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
-{{ if gt $pubs_selected_len 0 }}
-<section id="publications" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1>{{ with .Site.Params.publications_selected.title }}{{ . | markdownify }}{{ end }}</h1>
-                {{ with .Site.Params.publications_selected.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                {{ if .Site.Params.publications_selected.detailed_list }}
-                {{ range (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
-                {{ partial "publication_li_detailed" . }}
-                {{ end }}
-                {{ else }}
-                <ul class="fa-ul">
-                    {{ range (where (where .Data.Pages "Type" "publication") ".Params.selected" true) }}
-                    {{ partial "publication_li_simple" . }}
-                    {{ end }}
-                </ul>
-                {{ end }}
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- {{ end }} -->
-
-
 <!-- Publications Section -->
 {{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
 {{ if gt $pubs_len 0 }}
@@ -38,16 +9,8 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1>{{ with .Site.Params.publications.title }}{{ . | markdownify }}{{ end }}</h1>
+                <h1><a href="{{.Site.BaseURL}}/publication/">{{ with .Site.Params.publications.title }}{{ . | markdownify }}{{ end }}</a></h1>
                 {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-                {{ if gt $pubs_len .Site.Params.publications.count }}
-                <p class="view-all">
-                    <a href="{{ .Site.BaseURL }}publication/">
-                        {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </p>
-                {{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
                 {{ if .Site.Params.publications.detailed_list }}
@@ -63,9 +26,20 @@
                 {{ end }}
             </div>
         </div>
+        <div>
+            {{ if gt $pubs_len .Site.Params.publications.count }}
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}publication/">
+                    {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+            {{ end }}
+        </div>
     </div>
 </section>
 {{ end }}
+
 
 <!-- Projects Section -->
 {{ $projects_len := len (where .Data.Pages "Type" "project") }}
@@ -74,12 +48,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1>{{ with .Site.Params.projects.title }}{{ . | markdownify }}{{ end }}</h1>
+                <h1><a href="{{.Site.BaseURL}}/project/">{{ with .Site.Params.projects.title }}{{ . | markdownify }}{{ end }}</a></h1>
                 {{ with .Site.Params.projects.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
                 <ul class="fa-ul">
-                    {{ range where .Data.Pages "Type" "project" }}
+                    {{ range first .Site.Params.projects.count (where .Data.Pages "Type" "project") }}
                     <li>
                         <span class="project-title">
                         {{ if .Content }}<a href="{{ .Permalink }}">{{ else }}{{ with .Params.external_link }}<a href="{{ . }}">{{ end }}{{ end }}
@@ -106,6 +80,16 @@
                 </ul>
             </div>
         </div>
+        <div>
+            {{ if gt $projects_len .Site.Params.projects.count }}
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}project/">
+                    {{ with .Site.Params.projects.str_all }}{{ . | markdownify }}{{ end }}
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+            {{ end }}
+        </div>
     </div>
 </section>
 {{ end }}
@@ -113,12 +97,25 @@
 
 <!-- Members -->
 <section id="members" class="home-section">
-    <div class="container-fluid">
-        <h1 class="section-heading"> Members </h1>
+    <div class="container">
+        <div class="col-xs-12 col-md-4 section-heading">
+            <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
+        </div>
         <div class="row">
+            <div class="col-xs-12 col-md-12">
                 {{ range (where .Data.Pages "Type" "member") | shuffle | first 3 }}
                         {{ partial "member_simple" . }}
                 {{ end }}
+            </div>
+        </div>
+        <div>
+            <p></p>
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}member/">
+                    All members
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
         </div>
     </div>
 </section>
@@ -130,16 +127,8 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1>{{ with .Site.Params.posts.title }}{{ . | markdownify }}{{ end }}</h1>
+                <h1><a href="{{ $.Site.BaseURL }}/post/"> {{ with .Site.Params.posts.title }}{{ . | markdownify }}{{ end }}</a></h1>
                 {{ with .Site.Params.posts.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-                {{ if gt $posts_len .Site.Params.posts.count }}
-                <p class="view-all">
-                    <a href="{{ .Site.BaseURL }}post/">
-                        {{ with .Site.Params.posts.str_all }}{{ . | markdownify }}{{ end }}
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </p>
-                {{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
                 {{ range first .Site.Params.posts.count (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
@@ -161,6 +150,16 @@
                 </div>
                 {{ end }}
             </div>
+        </div>
+        <div>
+            {{ if gt $posts_len .Site.Params.posts.count }}
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}post/">
+                    {{ with .Site.Params.posts.str_all }}{{ . | markdownify }}{{ end }}
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+            {{ end }}
         </div>
     </div>
 </section>
@@ -184,4 +183,5 @@
 </section>
 {{ end }}
 
+{{ partial "footer_container.html" . }}
 {{ partial "footer.html" . }}

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Posts</h1>
+            <h1>Publications</h1>
 
             {{ range .Data.Pages.GroupByDate "2006" }}
             <div class="row" id="pub_list">
@@ -17,7 +17,7 @@
                         <li>
                             <i class="fa-li fa fa-file-text-o"  aria-hidden="true" style="color:#03396c;font-size:80%;padding-top:6px;"></i>
                             <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                            {{.Params.short_text}}
+                            {{.Params.abstract_short}}
                         </li>
                         {{ end }}
                     </ul>

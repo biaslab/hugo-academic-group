@@ -2,6 +2,7 @@
 name = ""
 short_name = ""
 bio = ""
+short_bio = ""
 id = ""
 organisations = [""]
 portrait = ""
