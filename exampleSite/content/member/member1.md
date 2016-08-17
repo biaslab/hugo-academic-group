@@ -22,7 +22,7 @@ title = "Member 1"
 [[social]]
     icon = "google-scholar"
     icon_pack = "ai"
-    link = "https://scholar.google.nl/citations?user=x3EIIHEAAAAJ"
+    link = "https://scholar.google.nl/"
 
 [[social]]
     icon = "github"
@@ -35,7 +35,7 @@ title = "Member 1"
     year = 2004
 
 [[organizations]]
-    name = "TU/e"
+    name = "Harvard University"
     role = "Full Professor"
 
 +++

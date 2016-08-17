@@ -3,13 +3,13 @@
 
 name = "Academic Group"
 license = "MIT"
-licenselink = "https://github.com/spsbrats/hugo-academic-group/blob/master/LICENSE.md"
+licenselink = "https://github.com/biaslab/hugo-academic-group/blob/master/LICENSE.md"
 description = "A simple theme for academic groups and research departments."
-homepage = "https://github.com/spsbrats/hugo-academic-group"
+homepage = "https://github.com/biaslab/hugo-academic-group"
 tags = ["academic", "research", "unversity"]
 features = ["blog", "landing"]
 min_version = 0.15
 
 [author]
-  name = "SPS Brats"
-  homepage = "https://spsbrats.github.io"
+  name = "Ivan Bocharov"
+  homepage = "https://biaslab.github.io"

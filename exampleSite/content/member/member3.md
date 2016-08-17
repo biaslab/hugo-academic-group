@@ -1,13 +1,13 @@
 +++
 bio = ""
 date = "2016-07-12T15:52:22+02:00"
-id = "member1"
+id = "member3"
 interests = ["Deep Learning", "Pattern Recognition", "Computer Science"]
 name = "Member Member"
 portrait = "/portraits/portrait.jpg"
 short_bio = "My short bio. I am Member Member."
 short_name = ""
-title = "Member 1"
+title = "Member 3"
 
 [[social]]
     icon = "envelope"
@@ -22,7 +22,7 @@ title = "Member 1"
 [[social]]
     icon = "google-scholar"
     icon_pack = "ai"
-    link = "https://scholar.google.nl/citations?user=x3EIIHEAAAAJ"
+    link = "https://scholar.google.nl/"
 
 [[social]]
     icon = "github"
@@ -35,7 +35,7 @@ title = "Member 1"
     year = 2014
 
 [[organizations]]
-    name = "TU/e"
+    name = "Harvard University"
     role = "PhD Student"
 
 +++
