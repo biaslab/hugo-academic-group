@@ -30,7 +30,7 @@ header{
 .header-content {
     position: relative;
     width: 100%;
-    padding: 100px 15px;
+    padding: 50px 15px;
     text-align: center;
 }
 
@@ -51,6 +51,7 @@ header{
     font-weight: 300;
     color: rgba(255,255,255,.7);
 }
+
 
 .row:after,
 .row:before {
@@ -162,6 +163,7 @@ pre {
 hr {
     max-width: 80px;
 }
+
 /*************************************************
  *  Home Sections
  **************************************************/
@@ -698,12 +700,10 @@ table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.43;
     vertical-align: top;
-    border-top: 1px solid #ddd;
 }
 
 table > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
 }
 
 table > caption + thead > tr:first-child > th,
@@ -715,23 +715,52 @@ table > thead:first-child > tr:first-child > td {
     border-top: 0;
 }
 
-table > tbody + tbody {
-    border-top: 2px solid #ddd;
+/* table > tbody + tbody { */
+/*     border-top: 2px solid #ddd; */
+/* } */
+
+/* table table { */
+/*     background-color: #fff; */
+/* } */
+
+
+/* /\* Table Striped *\/ */
+/* table > tbody > tr:nth-child(odd) > td, */
+/* table > tbody > tr:nth-child(odd) > th { */
+/*     background-color: #f9f9f9; */
+/* } */
+
+/* /\* Table Hover *\/ */
+/* table > tbody > tr:hover > td, */
+/* table > tbody > tr:hover > th { */
+/*     background-color: #e5e5e5; */
+/* } */
+
+.header-table{
+    background-color: transparent;
 }
 
-table table {
-    background-color: #fff;
+.header-table td, .header-table th {
+    border: 1px solid  rgba(255,255,255,.7);
+    text-align: center;
 }
 
-
-/* Table Striped */
-table > tbody > tr:nth-child(odd) > td,
-table > tbody > tr:nth-child(odd) > th {
-    background-color: #f9f9f9;
+.header-table th,
+.header-table tr:last-child td {
+    border-bottom: 0;
 }
 
-/* Table Hover */
-table > tbody > tr:hover > td,
-table > tbody > tr:hover > th {
-    background-color: #e5e5e5;
+.header-table tr:first-child th,
+.header-table td {
+    border-top: 0;
+}
+
+.header-table tr td:first-child,
+.header-table tr th:first-child {
+    border-left: 0;
+}
+
+.header-table tr td:last-child,
+.header-table tr th:last-child {
+    border-right: 0;
 }
