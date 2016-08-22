@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2016 SPS Brats
+Copyright for portions of hugo-academic-group are held by George Cushen, 2016 as part of project hugo-academic. All other copyright for project hugo-academic-group belong to Ivan Bocharov, 2016
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

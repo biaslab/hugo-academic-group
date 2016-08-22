@@ -1,0 +1,125 @@
+layoutdir = "themes/hugo-academic-group/layouts"
+publishdir = "public"
+static = "/static"
+builddrafts = false
+# Replace this with your website URL
+baseurl = "http://example.org/"
+canonifyurls = true
+theme = "hugo-academic-group"
+title = "Academic group name"
+math = true
+copyright = "&copy; Your Name, 2016 "
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+
+[params]
+  description = "Website of research group"
+  author = "Your name"
+  email = "mail@example.org"
+  address = "3566 Spirit Drive NEW HAVEN Connecticut"
+
+  slogan = "ACADEMIC GROUP"
+  slogan_text = "Modern Artificial Intelligence research"
+
+
+  [[params.slogan_columns]]
+    title = "About"
+    text =  "Lorem markdownum potest utinam stabat nostris circinat sui intus eminus sanguis: narres gratata hastae dissimulant erat Trinacris! Et caput mandata gravitate atque, caeloque Oleniae austrum! Haemonio ex neque in suas iste, quem hastam alis conquerar altae, arce tutaeque est sincera [fores](http://illo.com/). Et *Aetnaea in spectat* mutarent. Prospexit longaeque adest fatidicamque dicemur habet, nec cognitus me Trachinia sperat."
+    link = "/about"
+    link_text = "Meet the team"
+    weight = 1
+  
+  [[params.slogan_columns]]
+    title = "Mission"
+    text = "Per peterem ex, Eurystheus videt maeonis, Paeonis uritur. Dextera [legem](http://nubibus.net/qualisardeat), contigerat optabile undis bene: abis sperato. Instrumenta arma, subiectas generis non ipsa patres quia magna Messeneque lacrimaeque torva. Aequo crescunt inrequieta feras, diu illa est occupat aequoribus hunc Elpenora tollens vult robore. Finiat priora vulnere nec Nelei fit quae totidemque intibaque iter longo."
+    link = "/mission"
+    link_text = "Read more"
+    weight = 2
+
+  [[params.slogan_columns]]
+    title = "Approach"
+    text = "Lorem markdownum in texit! Quoniam ferar tabellis modo! Nam et spatiosumque puellae modo temperiemque mare canentis ministris **populisque** actus flammifera [dicta](http://www.geminoalpino.com/nec-pegason), non neque nutrit [recingunt Phrygiae](http://vitta-telamone.org/cyllenenquearcus.php). Pignoribus Phaestia Chaonis simulacraque viae et genus miratur moenibus tinnitibus ex simul."
+    link = "/approach"
+    link_text = "Read more"
+    weight = 3
+
+  # Selected Publications section.
+  [params.publications_selected]
+    detailed_list = true
+    title = "Selected Publications"
+    subtitle = ""
+
+  # Publications section.
+  # Section will only be displayed if there are publications in `content/publication/`.
+  [params.publications]
+    count = 5
+    detailed_list = false
+    title = "Publications"
+    subtitle = ""
+    str_all = "More Publications"
+
+  # Posts section.
+  # Section will only be displayed if there are posts in `content/post/`.
+  [params.posts]
+    count = 2
+    title = "Blog"
+    subtitle = ""
+    str_all = "More Posts"
+    str_read_more = "Read more"
+
+  # Projects section.
+  # Section will only be displayed if there are projects in `content/project/`.
+  [params.projects]
+    title = "Projects"
+    subtitle = ""
+    count = 3
+    str_all = "More Projects"
+
+  # Contact section.
+  [params.contact]
+    enable = true
+    title = "Contact"
+    subtitle = ""
+    autolink = false  # Automatically link email and phone?
+
+  # Navigation Links
+  #   The weight parameter defines the order that the links will appear in.
+
+  [[menu.main]]
+      name = "Home"
+      url = "#top"
+      weight = 1
+
+  [[menu.main]]
+      name = "Research"
+      url = "/research"
+      weight = 2
+
+  [[menu.main]]
+      name = "Publications"
+      url = "#publications"
+      weight = 3
+
+    [[menu.main]]
+      name = "Projects"
+      url = "#projects"
+      weight = 4
+
+  [[menu.main]]
+      name = "Members"
+      url = "#members"
+      weight = 5
+
+  [[menu.main]]
+      name = "Blog"
+      url = "#posts"
+      weight = 6
+
+
+  [[menu.main]]
+      name = "Contact"
+      url = "#contact"
+      weight = 7

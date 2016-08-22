@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3">
+        <a href="{{ .Permalink }}">
+            <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}img/{{ .Params.portrait }}');"></div>
+        </a>
+        <div class="portrait-title">
+            <h2 itemprop="name"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h2>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        {{ range .Params.organizations }}
+            <h4>{{ .role }}, {{.name}}</h4>
+            {{ end }}
+        {{ .Params.short_bio }}
+    </div>
+
+</div>

@@ -1,0 +1,77 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="col-xs-12 col-md-4">
+        <div id="profile">
+
+            <div class="portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}img/{{ .Params.portrait }}');"></div>
+
+            <div class="portrait-title">
+                <h2 itemprop="name">{{ .Params.name }}</h2>
+                <h3 itemprop="jobTitle">{{ .Params.role }}</h3>
+                {{ range .Params.organizations }}
+                    <h4>{{ .role }}, {{.name}}</h4>
+                {{ end }}
+            </div>
+
+            <ul class="social-icon">
+                {{ range .Params.social }}
+                <li>
+                    <a href="{{ .link }}">
+                    {{ if eq .icon_pack "ai" }}
+                        <i class="ai ai-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ else }}
+                        <i class="fa fa-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ end }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="visible-sm visible-xs"></div>
+    <div class="col-xs-12 col-md-8" itemprop="description">
+        <div class="row">
+
+            <div class="col-sm-5">
+                <h3>Interests</h3>
+                <ul>
+                    {{ range .Params.interests }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+
+
+
+            <div class="col-sm-7">
+                <h3>Education</h3>
+                <ul class="ul-edu fa-ul">
+                    {{ range .Params.education }}
+                    <li>
+                        <i class="fa-li fa fa-graduation-cap"></i>
+                        <div class="description">
+                            <p class="course">{{ .course }}, {{ .year }}</p>
+                            <p class="institution">{{ .institution }}</p>
+                        </div>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Biography</h3>
+                 <div class="article-style">{{ .Content }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
