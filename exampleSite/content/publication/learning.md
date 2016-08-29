@@ -1,7 +1,6 @@
 +++
 abstract = " Lorem markdownum! In heros: cuncti pendebant templum tendentem bracchiafuit. Ius tibi positis octonis, est si ego inplet sine aequor fortibus, arcebatque missi opposuitque. Sibi adest Mnemonides vultum croceis tecti quartus cruor. Deflevit est remis corpora, super his plumis coepi non libera selige suspenderat ille vertice, purpureae Diana, et."
-abstract_short = ""
-authors = ["Member Member", "Member Member"]
+abstract_short = "Short version of abstract."
 date = "2016-07-12T16:37:31+02:00"
 image = ""
 image_preview = ""
@@ -17,6 +16,12 @@ url_project = "/project/deeplearning"
 url_slides = ""
 url_video = ""
 
+[[authors]]
+    name = "member1"
+    is_member = true
+[[authors]]
+    name = "Not a Member"
+    is_member = false
 +++
 
 

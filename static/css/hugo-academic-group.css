@@ -726,27 +726,6 @@ table > thead:first-child > tr:first-child > td {
     border-top: 0;
 }
 
-/* table > tbody + tbody { */
-/*     border-top: 2px solid #ddd; */
-/* } */
-
-/* table table { */
-/*     background-color: #fff; */
-/* } */
-
-
-/* /\* Table Striped *\/ */
-/* table > tbody > tr:nth-child(odd) > td, */
-/* table > tbody > tr:nth-child(odd) > th { */
-/*     background-color: #f9f9f9; */
-/* } */
-
-/* /\* Table Hover *\/ */
-/* table > tbody > tr:hover > td, */
-/* table > tbody > tr:hover > th { */
-/*     background-color: #e5e5e5; */
-/* } */
-
 .header-table{
     background-color: transparent;
 }

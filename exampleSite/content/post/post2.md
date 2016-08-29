@@ -1,10 +1,14 @@
 +++
-authors = [""]
 date = "2016-07-12T16:50:58+02:00"
 post_title = ""
-short_text = "A short story about death and glory."
+short_text = "Short description of post."
 title = "Test post please ignore"
-
+[[authors]]
+    name = "member1"
+    is_member = true
+[[authors]]
+    name = "Not a Member"
+    is_member = false
 +++
 
 # Est Procrin
