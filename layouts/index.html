@@ -2,6 +2,7 @@
 {{ partial "navbar.html" . }}
 {{ partial "slogan.html" . }}
 
+
 <!-- Publications Section -->
 {{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
 {{ if gt $pubs_len 0 }}
@@ -98,10 +99,10 @@
 <!-- Members -->
 <section id="members" class="home-section">
     <div class="container">
+       <div class="row">
         <div class="col-xs-12 col-md-4 section-heading">
             <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
         </div>
-        <div class="row">
             <div class="col-xs-12 col-md-12">
                 {{ range (where .Data.Pages "Type" "member") | shuffle | first 3 }}
                         {{ partial "member_simple" . }}

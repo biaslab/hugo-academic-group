@@ -424,6 +424,17 @@ h3.article-title a {
     margin-bottom: 0;
 }
 
+
+.article-authors {
+    float: right;
+    text-align: right;
+    padding: 10px;
+}
+
+.article-published-at {
+    padding: 10px;
+}
+
 #comments {
     padding: 20px;
 }
