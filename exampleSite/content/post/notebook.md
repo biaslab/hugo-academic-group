@@ -1,15 +1,15 @@
 +++
 date = "2016-07-12T15:50:58+02:00"
-post_title = ""
 short_text = "Example of Jupyter notebook conversion"
-text = ""
 title = "Jupyter Notebook"
 [[authors]]
     name = "member1"
     is_member = true
+    link = "/member1"
 [[authors]]
     name = "member2"
     is_member = true
+    link = "/member2"
 +++
 
 # An IJulia Preview

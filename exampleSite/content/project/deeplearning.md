@@ -3,11 +3,12 @@ date = "2016-07-12T16:10:22+02:00"
 description = ""
 external_link = ""
 image = ""
-participants = [""]
 project_id = ""
 short_description = ""
 title = "Deep Learning"
-
+[[participants]]
+    name = ""
+    is_member = true
 +++
 
 # Et sensus uncos Troiaeque mori candidaque ostentis

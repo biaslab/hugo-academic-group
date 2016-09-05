@@ -13,14 +13,14 @@
                 {{if gt $authors_len 1}}
                     {{ range first (sub $authors_len 1) .Params.authors }}
                         {{ if .is_member }}
-                        <a href="/member/{{.name}}">{{.name}}</a>,
+                        <a href="/member{{.link}}">{{.name}}</a>,
                         {{else}}
                         {{.name}}
                         {{end}}
                     {{ end }}
                     {{ range last 1 .Params.authors }}
                         {{ if .is_member }}
-                        <a href="/member/{{.name}}">{{.name}}</a>
+                        <a href="/member{{.link}}">{{.name}}</a>
                         {{else}}
                         {{.name}}
                         {{end}}
@@ -28,7 +28,7 @@
                 {{else}}
                     {{range .Params.authors }}
                         {{ if .is_member }}
-                        <a href="/member/{{.name}}">{{.name}}</a>
+                        <a href="/member{{.link}}">{{.name}}</a>
                         {{else}}
                         {{.name}}
                         {{end}}

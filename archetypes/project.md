@@ -1,8 +1,10 @@
 +++
 description = ""
 short_description = ""
-participants = [""]
 project_id = ""
 image = ""
 external_link = ""
+[[participants]]
+    name = ""
+    is_member = true
 +++

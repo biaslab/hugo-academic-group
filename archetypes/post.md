@@ -1,6 +1,7 @@
 +++
-text = ""
 short_text = ""
-authors = [""]
-post_title = ""
+[[authors]]
+    name = ""
+    is_member = true
+    link = ""
 +++
