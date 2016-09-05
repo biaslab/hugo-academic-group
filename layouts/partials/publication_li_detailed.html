@@ -3,14 +3,14 @@
         {{ if .Params.image_preview }}
         <div class="col-md-12">
             <a href="{{ .Permalink }}">
-                <img src="{{ $.Site.BaseURL }}img/{{ .Params.image_preview }}" class="pub-banner" itemprop="image">
+                <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image_preview }}" class="pub-banner" itemprop="image">
             </a>
         </div>
         <div class="col-md-12">
         {{ else if .Params.image}}
         <div class="col-md-12">
             <a href="{{ .Permalink }}">
-                <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="pub-banner" itemprop="image">
+                <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="pub-banner" itemprop="image">
             </a>
         </div>
         <div class="col-md-12">

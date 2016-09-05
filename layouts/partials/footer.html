@@ -2,7 +2,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
 
 {{ range .Site.Params.custom_js }}
-<script src="{{ $.Site.BaseURL }}js/{{ . }}"></script>
+<script src="{{ $.Site.BaseURL }}/js/{{ . }}"></script>
 {{ end }}
 
 <!-- LaTeX math rendering -->

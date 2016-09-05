@@ -2,6 +2,7 @@
 {{ partial "navbar.html" . }}
 {{ partial "slogan.html" . }}
 
+
 <!-- Publications Section -->
 {{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
 {{ if gt $pubs_len 0 }}
@@ -62,7 +63,7 @@
                         {{ if .Content }}</a >{{ else }}{{ with .Params.external_link }}</a>{{ end }}{{ end }}
                         </span>
 
-                        {{ with .Params.short_description }}<p class="project-summary">{{ . }}</p>{{ end }}
+                        {{ with .Params.description }}<p class="project-summary">{{ . }}</p>{{ end }}
 
                         {{ if isset .Params "tags" }}
                         {{ $tagsLen := len .Params.tags }}
@@ -83,7 +84,7 @@
         <div>
             {{ if gt $projects_len .Site.Params.projects.count }}
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}project/">
+                <a href="{{ .Site.BaseURL }}/project/">
                     {{ with .Site.Params.projects.str_all }}{{ . | markdownify }}{{ end }}
                     <i class="fa fa-angle-double-right"></i>
                 </a>
@@ -98,10 +99,10 @@
 <!-- Members -->
 <section id="members" class="home-section">
     <div class="container">
+       <div class="row">
         <div class="col-xs-12 col-md-4 section-heading">
             <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
         </div>
-        <div class="row">
             <div class="col-xs-12 col-md-12">
                 {{ range (where .Data.Pages "Type" "member") | shuffle | first 3 }}
                         {{ partial "member_simple" . }}
@@ -111,7 +112,7 @@
         <div>
             <p></p>
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}member/">
+                <a href="{{ .Site.BaseURL }}/member/">
                     All members
                     <i class="fa fa-angle-double-right"></i>
                 </a>
@@ -135,7 +136,7 @@
                 <div class="article-list-item" itemscope itemprop="blogPost">
                     {{ if .Params.image }}
                     <a href="{{ .Permalink }}">
-                        <img src="{{ $.Site.BaseURL }}img/{{ .Params.image }}" class="article-banner" itemprop="image">
+                        <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">
                     </a>
                     {{end}}
                     <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
@@ -154,7 +155,7 @@
         <div>
             {{ if gt $posts_len .Site.Params.posts.count }}
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}post/">
+                <a href="{{ .Site.BaseURL }}/post/">
                     {{ with .Site.Params.posts.str_all }}{{ . | markdownify }}{{ end }}
                     <i class="fa fa-angle-double-right"></i>
                 </a>
