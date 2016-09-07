@@ -31,7 +31,6 @@ header{
     position: relative;
     width: 100%;
     padding: 50px 15px;
-    text-align: center;
 }
 
 .header-content .header-content-inner h1 {
@@ -52,6 +51,9 @@ header{
     color: rgba(255,255,255,.7);
 }
 
+.slogan-column {
+    text-align: justify;
+}
 
 .row:after,
 .row:before {
