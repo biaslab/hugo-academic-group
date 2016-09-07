@@ -30,7 +30,7 @@
         <div>
             {{ if gt $pubs_len .Site.Params.publications.count }}
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}publication/">
+                <a href="{{ .Site.BaseURL }}/publication/">
                     {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
                     <i class="fa fa-angle-double-right"></i>
                 </a>
