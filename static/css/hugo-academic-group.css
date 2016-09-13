@@ -129,6 +129,10 @@ video {
     display: block;
 }
 
+img.centered {
+    margin: 0 auto;
+}
+
 figcaption:before {
     font-weight: 700;
     text-transform: uppercase;
