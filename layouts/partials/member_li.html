@@ -1,18 +1,18 @@
-<div class="row">
+<div class="row member-info">
     <div class="col-md-3">
         <a href="{{ .Permalink }}">
             <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
         </a>
         <div class="portrait-title">
-            <h2 itemprop="name"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h2>
+            <h3 itemprop="name"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h3>
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-9">
         {{ range .Params.organizations }}
             <h4>{{ .role }}, {{.name}}</h4>
             {{ end }}
-        {{ .Params.short_bio }}
+        {{ .Params.short_bio | markdownify }}
     </div>
 
 </div>

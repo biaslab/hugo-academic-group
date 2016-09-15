@@ -2,46 +2,6 @@
 {{ partial "navbar.html" . }}
 {{ partial "slogan.html" . }}
 
-
-<!-- Publications Section -->
-{{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
-{{ if gt $pubs_len 0 }}
-<section id="publications" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1><a href="{{.Site.BaseURL}}/publication/">{{ with .Site.Params.publications.title }}{{ . | markdownify }}{{ end }}</a></h1>
-                {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
-            </div>
-            <div class="col-xs-12 col-md-8">
-                {{ if .Site.Params.publications.detailed_list }}
-                {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
-                {{ partial "publication_li_detailed" . }}
-                {{ end }}
-                {{ else }}
-                <ul class="fa-ul">
-                    {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
-                    {{ partial "publication_li_simple" . }}
-                    {{ end }}
-                </ul>
-                {{ end }}
-            </div>
-        </div>
-        <div>
-            {{ if gt $pubs_len .Site.Params.publications.count }}
-            <p class="view-all">
-                <a href="{{ .Site.BaseURL }}/publication/">
-                    {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
-                    <i class="fa fa-angle-double-right"></i>
-                </a>
-            </p>
-            {{ end }}
-        </div>
-    </div>
-</section>
-{{ end }}
-
-
 <!-- Projects Section -->
 {{ $projects_len := len (where .Data.Pages "Type" "project") }}
 {{ if gt $projects_len 0 }}
@@ -95,19 +55,61 @@
 </section>
 {{ end }}
 
+<!-- Publications Section -->
+{{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
+{{ if gt $pubs_len 0 }}
+<section id="publications" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1><a href="{{.Site.BaseURL}}/publication/">{{ with .Site.Params.publications.title }}{{ . | markdownify }}{{ end }}</a></h1>
+                {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+            </div>
+            <div class="col-xs-12 col-md-8">
+                {{ if .Site.Params.publications.detailed_list }}
+                {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
+                {{ partial "publication_li_detailed" . }}
+                {{ end }}
+                {{ else }}
+                <ul class="fa-ul">
+                    {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
+                    {{ partial "publication_li_simple" . }}
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+        </div>
+        <div>
+            {{ if gt $pubs_len .Site.Params.publications.count }}
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}/publication/">
+                    {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
 
 <!-- Members -->
 <section id="members" class="home-section">
     <div class="container">
-       <div class="row">
-        <div class="col-xs-12 col-md-4 section-heading">
-            <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
-        </div>
-            <div class="col-xs-12 col-md-12">
-                {{ range (where .Data.Pages "Type" "member") | shuffle | first 3 }}
-                        {{ partial "member_simple" . }}
-                {{ end }}
+        <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
             </div>
+        </div>
+        <div class="row">
+            {{ range first 4 (where .Data.Pages "Type" "member") | shuffle}}
+                {{ partial "member_simple" . }}
+            {{ end }}
+        </div>
+        <div class="row">
+            {{ range after 4 (where .Data.Pages "Type" "member") | shuffle}}
+                {{ partial "member_simple" . }}
+            {{ end }}
         </div>
         <div>
             <p></p>
