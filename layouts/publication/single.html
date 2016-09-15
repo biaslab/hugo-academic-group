@@ -9,32 +9,7 @@
         <div class="pub-title">
             <h1 itemprop="name">{{ .Title }}</h1>
             <span class="pub-authors" itemprop="author">
-                {{$authors_len := len .Params.authors}}
-                {{if gt $authors_len 1}}
-                    {{ range first (sub $authors_len 1) .Params.authors }}
-                        {{ if .is_member }}
-                        <a href="/member{{.link}}">{{.name}}</a>,
-                        {{else}}
-                        {{.name}}
-                        {{end}}
-                    {{ end }}
-                    {{ range last 1 .Params.authors }}
-                        {{ if .is_member }}
-                        <a href="/member{{.link}}">{{.name}}</a>
-                        {{else}}
-                        {{.name}}
-                        {{end}}
-                    {{end}}
-                {{else}}
-                    {{range .Params.authors }}
-                        {{ if .is_member }}
-                        <a href="/member{{.link}}">{{.name}}</a>
-                        {{else}}
-                        {{.name}}
-                        {{end}}
-                    {{end}}
-                {{end}}
-
+                {{ partial "authors" . }}
             </span>
             <span class="pull-right">
                 {{ partial "share.html" . }}
