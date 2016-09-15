@@ -73,7 +73,7 @@
                 {{ else }}
                 <ul class="fa-ul">
                     {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
-                    {{ partial "publication_li_simple" . }}
+                    {{ partial "publication_li_detailed" . }}
                     {{ end }}
                 </ul>
                 {{ end }}

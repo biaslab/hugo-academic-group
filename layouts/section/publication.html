@@ -7,20 +7,15 @@
             <h1>Publications</h1>
 
             {{ range .Data.Pages.GroupByDate "2006" }}
+
             <div class="row" id="pub_list">
                 <div class="col-md-2">
                     <h3>{{ .Key }}</h3>
                 </div>
                 <div class="col-md-10">
-                    <ul class="compact fa-ul">
-                        {{ range .Pages.ByDate.Reverse }}
-                        <li>
-                            <i class="fa-li fa fa-file-text-o"  aria-hidden="true" style="color:#03396c;font-size:80%;padding-top:6px;"></i>
-                            <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                            {{.Params.abstract_short}}
-                        </li>
-                        {{ end }}
-                    </ul>
+                    {{ range .Pages.ByDate.Reverse }}
+                        {{ partial "publication_li_detailed" . }}
+                    {{end}}
                 </div>
             </div>
             {{ end }}

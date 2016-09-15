@@ -22,18 +22,8 @@
                 <a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a>
             </h3>
 
-            <div class="pub-abstract" itemprop="text">
-                {{ if .Params.abstract_short }}
-                    {{ .Params.abstract_short }}
-                {{ else }}
-                    {{ .Params.abstract }}
-                {{ end }}
-            </div>
-
             <div class="pub-authors" itemprop="author">
-                {{ with .Params.authors }}
-                    {{ delimit . ", " }}
-                {{ end }}
+                {{ partial "authors" .}}
             </div>
 
             <div class="pub-publication">
@@ -42,6 +32,7 @@
                 {{ else }}
                     {{ .Params.publication | markdownify }}
                 {{ end }}
+                <div itemprop="datePublished">{{ .Date.Format "January, 2006" }}</div>
             </div>
 
             <div class="pub-links">
