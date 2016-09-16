@@ -93,36 +93,6 @@
 </section>
 {{ end }}
 
-<!-- Members -->
-<section id="members" class="home-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-4 section-heading">
-                <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
-            </div>
-        </div>
-        <div class="row">
-            {{ range first 4 (where .Data.Pages "Type" "member") | shuffle}}
-                {{ partial "member_simple" . }}
-            {{ end }}
-        </div>
-        <div class="row">
-            {{ range after 4 (where .Data.Pages "Type" "member") | shuffle}}
-                {{ partial "member_simple" . }}
-            {{ end }}
-        </div>
-        <div>
-            <p></p>
-            <p class="view-all">
-                <a href="{{ .Site.BaseURL }}/member/">
-                    All members
-                    <i class="fa fa-angle-double-right"></i>
-                </a>
-            </p>
-        </div>
-    </div>
-</section>
-
 <!-- Blog Posts Section -->
 {{ $posts_len := len (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
 {{ if gt $posts_len 0 }}
@@ -168,6 +138,36 @@
 </section>
 {{ end }}
 
+
+<!-- Members -->
+<section id="members" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
+            </div>
+        </div>
+        <div class="row">
+            {{ range first 4 (where .Data.Pages "Type" "member") | shuffle}}
+                {{ partial "member_simple" . }}
+            {{ end }}
+        </div>
+        <div class="row">
+            {{ range after 4 (where .Data.Pages "Type" "member") | shuffle}}
+                {{ partial "member_simple" . }}
+            {{ end }}
+        </div>
+        <div>
+            <p></p>
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}/member/">
+                    All members
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
 
 <!-- Contact Section -->
 {{ if .Site.Params.contact.enable }}
