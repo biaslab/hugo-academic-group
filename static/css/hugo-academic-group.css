@@ -129,6 +129,10 @@ video {
     display: block;
 }
 
+img.centered {
+    margin: 0 auto;
+}
+
 figcaption:before {
     font-weight: 700;
     text-transform: uppercase;
@@ -255,7 +259,7 @@ hr {
     font-weight: 300;
     text-align: center;
     color: #AAAAAA;
-    margin: 0px 0 10px 0;
+    margin: 5px 0 10px 0;
 }
 
 #profile ul.social-icon {
@@ -303,6 +307,10 @@ ul.ul-edu li .description p.course {
 
 ul.ul-edu li .description p.institution {
     font-size: 0.88em;
+}
+
+.member-info {
+    padding: 0 0 20px 0;
 }
 
 /*************************************************
