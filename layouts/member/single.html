@@ -30,6 +30,24 @@
                 {{ end }}
             </ul>
 
+            <div class="row">
+                {{ with .Params.cv_link }}
+                    <a href="{{.}}">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        Curriculum vitae
+                    </a>
+                {{ end }}
+            </div>
+
+            <div class="row">
+                {{ with .Params.personal_website }}
+                    <a href="{{.}}">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        Personal website
+                    </a>
+                {{ end }}
+            </div>
+
         </div>
     </div>
 
