@@ -654,11 +654,15 @@ nav#navbar-main li {
     padding-bottom: 5px;
 }
 
-.navbar-brand {
+.navbar-brand{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.2em;
     color: #2b2b2b;
+}
+
+.navbar-brand a{
+    color: #565a5f;
 }
 
 @media screen and (max-width: 768px) {
