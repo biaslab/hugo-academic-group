@@ -10,7 +10,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ $baseUrl }}">{{ .Site.Title }}</a>
+            <div class="navbar-brand">
+                {{ if isset .Site.Params "parent_group" }}
+                <a href="{{.Site.Params.parent_group.link}}">{{.Site.Params.parent_group.name}}</a>
+                /{{end}}
+                <a href="{{ $baseUrl }}">{{ .Site.Title }}</a>
+            </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
