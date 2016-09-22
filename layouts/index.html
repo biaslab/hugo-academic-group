@@ -22,8 +22,12 @@
                         {{ .Title }}
                         {{ if .Content }}</a >{{ else }}{{ with .Params.external_link }}</a>{{ end }}{{ end }}
                         </span>
-
-                        {{ with .Params.description }}<p class="project-summary">{{ . }}</p>{{ end }}
+                        {{ if .Params.image }}
+                            <a href="{{ .Permalink }}">
+                                <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">
+                            </a>
+                        {{end}}
+                        {{ with .Params.description }}<p class="project-summary">{{ . | markdownify }}</p>{{ end }}
 
                         {{ if isset .Params "tags" }}
                         {{ $tagsLen := len .Params.tags }}
