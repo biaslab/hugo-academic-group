@@ -152,12 +152,12 @@
             </div>
         </div>
         <div class="row">
-            {{ range first 4 (where .Data.Pages "Type" "member") | shuffle}}
+            {{ range first 4 (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
                 {{ partial "member_simple" . }}
             {{ end }}
         </div>
         <div class="row">
-            {{ range after 4 (where .Data.Pages "Type" "member") | shuffle}}
+            {{ range after 4 (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
                 {{ partial "member_simple" . }}
             {{ end }}
         </div>

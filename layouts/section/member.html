@@ -3,7 +3,7 @@
 
 <div class="container">
     <h1>Members</h1>
-    {{ range .Data.Pages }}
+    {{ range (sort .Data.Pages ".Params.sort_position") }}
         {{partial "member_li" .}}
     {{ end }}
 </div>
