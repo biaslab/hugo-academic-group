@@ -1,10 +1,14 @@
 {{ if isset .Site.Params "sponsors" }}
-<div class="container-fluid">
+<div class="container">
     <div class="row sponsors">
-        <h2>We gratefully acknowledge financial support from our sponsors:</h2>
+        <div class="col-md-12">
+            <p>We gratefully acknowledge financial support from our sponsors:</p>
+        </div>
+    </div>
+    <div class="row sponsors">
         {{$sponsors_len := len .Site.Params.sponsors}}
         {{ range .Site.Params.sponsors }}
-        <div class="col-md-{{div 12 $sponsors_len}} center-block">
+        <div class="col-md-3 center-block">
             <a href="{{.link}}"><img src="{{.image}}" alt="{{.name}}" class="img-responsive center-block" height="200" width="200"></a>
         </div>
         {{ end }}
