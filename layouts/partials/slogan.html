@@ -2,7 +2,10 @@
     <div class="header-content">
         <div class="header-content-inner">
             <h1>
-                {{.Site.Params.slogan}}
+                {{ with .Site.Params.slogan_icon }}
+                    <i class="{{.}}"></i>
+                {{ end }}
+                {{.Site.Params.slogan | safeHTML}}
             </h1>
             <hr>
             <p>
