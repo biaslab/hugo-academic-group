@@ -17,7 +17,7 @@
                         <li>
                             <i class="fa-li fa fa-file-text-o"  aria-hidden="true" style="color:#03396c;font-size:80%;padding-top:6px;"></i>
                             <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                            {{.Params.description}}
+                            {{.Params.description | markdownify}}
                         </li>
                         {{ end }}
                     </ul>

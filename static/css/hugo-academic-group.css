@@ -43,6 +43,11 @@ header{
     margin: 30px auto;
 }
 
+.header-content .header-content-inner p.slogan-text {
+    font-size: 24px;
+    padding: 25px 0px 25px 0px;
+}
+
 .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-size: 16px;
@@ -53,6 +58,7 @@ header{
 .slogan-column {
     text-align: justify;
 }
+
 
 .row:after,
 .row:before {
@@ -179,7 +185,7 @@ span.darknav {
 
 .home-section {
     background-color: rgb(255, 255, 255);
-    padding: 110px 0 110px 0;
+    padding: 60px 0 60px 0;
 }
 @media screen and (max-width: 768px) {
     .home-section {
@@ -188,7 +194,7 @@ span.darknav {
 }
 
 .home-section:first-of-type {
-    padding: 110px 0 110px 0;
+    padding: 60px 0 60px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -394,7 +400,7 @@ h3.article-title a {
 }
 
 .article-list-item {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .article-list-item:last-child {
@@ -483,7 +489,7 @@ h3.article-title a {
 }
 
 .pub-list-item {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .pub-list-item .pub-abstract {
@@ -498,7 +504,7 @@ h3.article-title a {
 }
 
 .pub-list-item .pub-publication {
-    color: #090;
+    color: #3170A5;
     font-size: 1em;
 }
 

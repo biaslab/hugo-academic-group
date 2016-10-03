@@ -13,23 +13,34 @@
                 {{ with .Site.Params.projects.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
-                <ul class="fa-ul">
-                    {{ range first .Site.Params.projects.count (where .Data.Pages "Type" "project") }}
-                    <li>
-                        <span class="project-title">
-                        {{ if .Content }}<a href="{{ .Permalink }}">{{ else }}{{ with .Params.external_link }}<a href="{{ . }}">{{ end }}{{ end }}
-                        <i class="fa-li fa fa-files-o pub-icon" aria-hidden="true"></i>
-                        {{ .Title }}
-                        {{ if .Content }}</a >{{ else }}{{ with .Params.external_link }}</a>{{ end }}{{ end }}
-                        </span>
+                {{ range first .Site.Params.projects.count (where .Data.Pages "Type" "project") }}
+                    <div class="article-list-item">
+
+                        {{ if .Content }}
+                            <h3 class="article-title" itemprop="name">
+                                <a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a>
+                            </h3>
+                        {{ else }}
+                            {{ with .Params.external_link }}
+                            <h3 class="article-title" itemprop="name">
+                                <a href="{{ . }}">
+                            </h3>
+                            {{ end }}
+                        {{ end }}
+
                         {{ if .Params.image }}
                             <a href="{{ .Permalink }}">
                                 <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">
                             </a>
                         {{end}}
-                        {{ with .Params.description }}<p class="project-summary">{{ . | markdownify }}</p>{{ end }}
 
-                        {{ if isset .Params "tags" }}
+                        {{ with .Params.description }}
+                            <p class="project-summary">
+                                {{ . | markdownify }}
+                            </p>
+                        {{ end }}
+
+                        <!-- {{ if isset .Params "tags" }}
                         {{ $tagsLen := len .Params.tags }}
                         {{ if gt $tagsLen 0 }}
                         <div class="project-tags">
@@ -39,11 +50,9 @@
                             {{ end }}
                         </div>
                         {{ end }}
-                        {{ end }}
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
+                        {{ end }} -->
+                    </div>
+                {{ end }}
         </div>
         <div>
             {{ if gt $projects_len .Site.Params.projects.count }}
@@ -75,11 +84,9 @@
                 {{ partial "publication_li_detailed" . }}
                 {{ end }}
                 {{ else }}
-                <ul class="fa-ul">
                     {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
                     {{ partial "publication_li_detailed" . }}
                     {{ end }}
-                </ul>
                 {{ end }}
             </div>
         </div>
