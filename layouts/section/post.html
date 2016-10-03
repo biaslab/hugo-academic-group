@@ -12,15 +12,19 @@
                     <h3>{{ .Key }}</h3>
                 </div>
                 <div class="col-md-10">
-                    <ul class="compact fa-ul">
-                        {{ range .Pages.ByDate.Reverse }}
-                        <li>
-                            <i class="fa-li fa fa-file-text-o"  aria-hidden="true" style="color:#03396c;font-size:80%;padding-top:6px;"></i>
-                            <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                            {{.Params.short_text}}
-                        </li>
-                        {{ end }}
-                    </ul>
+                    {{ range .Pages.ByDate.Reverse }}
+
+                    <div class="article-list-item" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="row">
+                        <h3 class="article-title">
+                            <a href="{{ .Permalink }}" itemprop="url">
+                                {{ .Title }}
+                            </a>
+                        </h3>
+                        {{.Params.short_text}}
+                        </div>
+                    </div>
+                    {{ end }}
                 </div>
             </div>
             {{ end }}
