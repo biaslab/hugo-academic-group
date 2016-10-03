@@ -32,7 +32,12 @@
                 {{ else }}
                     {{ .Params.publication | markdownify }}
                 {{ end }}
-                <div itemprop="datePublished">{{ .Date.Format "January, 2006" }}</div>
+                <div itemprop="datePublished">
+                    {{ if .Params.to_be_published }}
+                        To be published in
+                    {{ end }}
+                    {{ .Date.Format "January, 2006" }}
+                </div>
             </div>
 
             <div class="pub-links">
