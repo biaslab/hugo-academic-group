@@ -10,10 +10,6 @@
 
         <h1 itemprop="name">{{ .Title }}</h1>
 
-        <div class="article-style" itemprop="articleBody">
-            {{ .Content }}
-        </div>
-
         <div class="row">
             <div class="col-xs-12 col-md-6 article-published-at">
                 <i>Published on:</i> <p>{{ .Date.Format "Jan 2, 2006" }}</p>
@@ -23,6 +19,12 @@
                 {{ partial "authors" .}}
             </div>
         </div>
+
+        <div class="article-style" itemprop="articleBody">
+            {{ .Content }}
+        </div>
+
+
 
     </article>
 
