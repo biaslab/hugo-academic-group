@@ -10,7 +10,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
             <div class="navbar-brand">
+                {{ if isset .Site.Params "university_logo"}}
+                    <a class="logo" href="{{.Site.Params.university_logo.link}}">
+                        <img src="/{{.Site.Params.university_logo.image}}" alt="University logo"></img>
+                    </a>
+                {{ end }}
                 {{ if isset .Site.Params "parent_group" }}
                 <a href="{{.Site.Params.parent_group.link}}">{{.Site.Params.parent_group.name}}</a>
                 /{{end}}

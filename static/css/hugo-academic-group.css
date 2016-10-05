@@ -684,6 +684,18 @@ nav#navbar-main li {
     color: #565a5f;
 }
 
+.navbar-brand a.logo{
+    text-decoration: none;
+}
+
+.navbar-brand a img {
+    height: 60px;
+    display:inline;
+    float:inherit;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         min-height: 50px !important;
@@ -724,6 +736,19 @@ nav#navbar-main li {
     }
     .collapse.in{
         display:block !important;
+    }
+    .navbar-brand {
+        padding-top: 0px;
+        display:inline;
+    }
+
+    .navbar-brand a.logo {
+         text-decoration: none;
+    }
+
+    .navbar-brand a img {
+        height: 40px;
+        display:inline;
     }
 }
 
