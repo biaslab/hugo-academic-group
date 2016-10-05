@@ -35,22 +35,16 @@
                         {{end}}
 
                         {{ with .Params.description }}
-                            <p class="project-summary">
+                            <p class="article-style" itemprop="articleBody">
                                 {{ . | markdownify }}
                             </p>
                         {{ end }}
 
-                        <!-- {{ if isset .Params "tags" }}
-                        {{ $tagsLen := len .Params.tags }}
-                        {{ if gt $tagsLen 0 }}
-                        <div class="project-tags">
-                            <i class="fa fa-tags"></i>
-                            {{ range $k, $v := .Params.tags }}
-                            {{ . }}{{ if lt $k (sub $tagsLen 1) }}, {{ end }}
-                            {{ end }}
-                        </div>
-                        {{ end }}
-                        {{ end }} -->
+                        <p class="read-more">
+                            <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
+                                {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
+                            </a>
+                        </p>
                     </div>
                 {{ end }}
         </div>

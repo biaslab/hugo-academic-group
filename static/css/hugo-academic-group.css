@@ -379,10 +379,10 @@ ul.share li:hover .fa {
     font-size: 1.75rem;
 }
 
-h3.article-title a {
+/*h3.article-title a {
     color: #151515;
     transition: color 0.6s ease;
-}
+}*/
 
 .article-metadata {
     margin-bottom: 20px;
@@ -505,11 +505,11 @@ h3.article-title a {
     line-height: normal;
     font-style: normal;
     font-size: 1.13em;
-    color: #3170A5;
+    /*color: #3170A5;*/
 }
 
 .pub-list-item .pub-publication {
-    color: #3170A5;
+    /*color: #3170A5;*/
     font-size: 1em;
 }
 
