@@ -1,14 +1,14 @@
-{{$authors_len := len .Params.authors}}
+{{$authors_len := len . }}
 <div itemprop="author">
         {{if gt $authors_len 1}}
-            {{ range first (sub $authors_len 1) .Params.authors }}
+            {{ range first (sub $authors_len 1) . }}
                 {{ if .is_member }}
                     <a href="/member{{.link}}">{{.name}}</a>,
                 {{else}}
                     {{.name}},
                 {{end}}
             {{ end }}
-            {{ range last 1 .Params.authors }}
+            {{ range last 1 . }}
                 {{ if .is_member }}
                     <a href="/member{{.link}}">{{.name}}</a>
                 {{else}}
@@ -16,7 +16,7 @@
                 {{end}}
             {{end}}
         {{else}}
-            {{range .Params.authors }}
+            {{range . }}
                 {{ if .is_member }}
                     <a href="/member{{.link}}">{{.name}}</a>
                 {{else}}

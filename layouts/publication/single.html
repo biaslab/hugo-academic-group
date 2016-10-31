@@ -9,7 +9,7 @@
         <div class="pub-title">
             <h1 itemprop="name">{{ .Title }}</h1>
             <span class="pub-authors" itemprop="author">
-                {{ partial "authors" . }}
+                {{ partial "authors" .Params.authors }}
             </span>
             <span class="pull-right">
                 {{ partial "share.html" . }}

@@ -12,6 +12,11 @@
         </div>
     </article>
 
+    {{ if isset .Params "participants" }}
+      <h2>Participants:</h2>
+      {{ partial "authors.html" .Params.participants }}
+    {{end}}
+
     {{ partial "section_pager.html" . }}
 
 </div>
