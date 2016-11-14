@@ -685,7 +685,6 @@ nav#navbar-main li {
 }
 
 .navbar-brand{
-    text-transform: uppercase;
     font-weight: bold;
     font-size: 1.2em;
     color: #2b2b2b;
