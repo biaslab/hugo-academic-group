@@ -3,21 +3,23 @@
 <div class="container">
     
     {{ if eq .Params.participants_block_position "up" }}
+        <h3>Participants:</h3>
+        <div id="participants"> 
             <div class="container">
                 <div class="row">
-                    <h3>Participants:</h3>
-                    {{$participants := .Params.participants}}
-                    {{ range where .Site.Pages "Section" "member" }}
-                       {{ $current_member := . }}
-                        {{ range $participants }} 
+                {{$participants := .Params.participants}}
+                {{ range where .Site.Pages "Section" "member" }}
+                   {{ $current_member := . }}
+                   {{ range $participants }} 
                             {{ if eq $current_member.Params.id .id }}
                                 {{ partial "member_small.html" $current_member }}
                             {{ end }}
                         {{ end }}
-                    {{ end }}
+                {{ end }}
                 </div>
             </div>
-       {{ end }}
+        </div>
+    {{ end }}
        
 
 
@@ -32,9 +34,10 @@
     </article>
     
     {{ if eq .Params.participants_block_position "down" }}
+        <h3>Participants:</h3>
+        <div id="participants"> 
             <div class="container">
                 <div class="row">
-                    <h3>Participants:</h3>
                     {{$participants := .Params.participants}}
                     {{ range where .Site.Pages "Section" "member" }}
                        {{ $current_member := . }}
@@ -46,6 +49,7 @@
                     {{ end }}
                 </div>
             </div>
+        </div>
     {{ end }}
  
     {{ partial "section_pager.html" . }}

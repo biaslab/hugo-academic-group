@@ -568,6 +568,10 @@ section#projects.home-section .project-tags {
     clear: both;
 }
 
+#participants > .container > .row > .col-md-2:nth-child(6n+1) {
+    clear: both;
+}
+
 /*************************************************
  *  Footer
  **************************************************/
