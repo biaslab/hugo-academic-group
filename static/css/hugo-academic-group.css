@@ -560,6 +560,13 @@ section#projects.home-section .project-tags {
     text-align: left;
 }
 
+/*************************************************
+ *  Members
+ **************************************************/
+
+#members > .container > .row > .col-md-3:nth-child(4n+1) {
+    clear: both;
+}
 
 /*************************************************
  *  Footer
