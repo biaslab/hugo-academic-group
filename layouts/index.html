@@ -152,13 +152,8 @@
                 <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/"> Members </a></h1>
             </div>
         </div>
-        <div class="row">
-            {{ range first 4 (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
-                {{ partial "member_simple" . }}
-            {{ end }}
-        </div>
-        <div class="row">
-            {{ range after 4 (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
+       <div class="row">
+            {{ range (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
                 {{ partial "member_simple" . }}
             {{ end }}
         </div>

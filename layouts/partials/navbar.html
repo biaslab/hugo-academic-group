@@ -12,15 +12,23 @@
             </button>
 
             <div class="navbar-brand">
-                {{ if isset .Site.Params "university_logo"}}
-                    <a class="logo" href="{{.Site.Params.university_logo.link}}">
-                        <img src="/{{.Site.Params.university_logo.image}}" alt="University logo"></img>
+                {{ if isset .Site.Params "logo"}}
+                    <a class="logo" href="{{.Site.Params.logo.link}}">
+                        <img src="/{{.Site.Params.logo.image}}" alt="University logo"></img>
                     </a>
                 {{ end }}
-                {{ if isset .Site.Params "parent_group" }}
-                <a href="{{.Site.Params.parent_group.link}}">{{.Site.Params.parent_group.name}}</a>
-                /{{end}}
-                <a href="{{ $baseUrl }}">{{ .Site.Title }}</a>
+                {{ if isset .Site.Params "navbar_hierarchy" }}
+                {{ $hierarchy_len := len .Site.Params.navbar_hierarchy }} 
+                    {{ range first (sub $hierarchy_len 1) (sort .Site.Params.navbar_hierarchy ".position") }}
+                        <a href="{{.link}}">{{.name}}</a>
+                        /
+                    {{ end }}
+                
+                    {{ range last 1 (sort .Site.Params.navbar_hierarchy ".position") }}
+                        <a href="{{.link}}">{{.name | safeHTML }}</a>
+                    {{ end }}
+    
+                {{end}}
             </div>
         </div>
 
