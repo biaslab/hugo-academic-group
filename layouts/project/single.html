@@ -2,7 +2,11 @@
 {{ partial "navbar.html" . }}
 <div class="container">
     
-    {{ if eq .Params.participants_block_position "up" }}
+
+    <article class="article article-project" itemscope itemtype="http://schema.org/Article">
+        <h1 itemprop="name">{{ .Title }}</h1>
+        
+        {{ if eq .Params.participants_block_position "up" }}
         <h3>Participants:</h3>
         <div id="participants"> 
             <div class="container">
@@ -19,21 +23,15 @@
                 </div>
             </div>
         </div>
-    {{ end }}
-       
+        {{ end }}
 
-
-    <article class="article article-project" itemscope itemtype="http://schema.org/Article">
-        <h1 itemprop="name">{{ .Title }}</h1>
-        
-              {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to Project Site</a>{{ end }}
+        {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to Project Site</a>{{ end }}
 
         <div class="article-style" itemprop="articleBody">
             {{ .Content }}
         </div>
-    </article>
     
-    {{ if eq .Params.participants_block_position "down" }}
+        {{ if eq .Params.participants_block_position "down" }}
         <h3>Participants:</h3>
         <div id="participants"> 
             <div class="container">
@@ -50,9 +48,10 @@
                 </div>
             </div>
         </div>
-    {{ end }}
- 
-    {{ partial "section_pager.html" . }}
+        {{ end }}
+     </article>
+    
+   {{ partial "section_pager.html" . }}
 
 </div>
 
