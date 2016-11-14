@@ -25,7 +25,7 @@
                     {{ end }}
                 
                     {{ range last 1 (sort .Site.Params.navbar_hierarchy ".position") }}
-                        <a href="{{.link}}">{{.name}}</a>
+                        <a href="{{.link}}">{{.name | safeHTML }}</a>
                     {{ end }}
     
                 {{end}}
