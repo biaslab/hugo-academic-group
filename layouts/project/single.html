@@ -1,22 +1,53 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 <div class="container">
+    
+    {{ if eq .Params.participants_block_position "up" }}
+            <div class="container">
+                <div class="row">
+                    <h3>Participants:</h3>
+                    {{$participants := .Params.participants}}
+                    {{ range where .Site.Pages "Section" "member" }}
+                       {{ $current_member := . }}
+                        {{ range $participants }} 
+                            {{ if eq $current_member.Params.id .id }}
+                                {{ partial "member_small.html" $current_member }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+       {{ end }}
+       
+
 
     <article class="article article-project" itemscope itemtype="http://schema.org/Article">
         <h1 itemprop="name">{{ .Title }}</h1>
-
-        {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to Project Site</a>{{ end }}
+        
+              {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to Project Site</a>{{ end }}
 
         <div class="article-style" itemprop="articleBody">
             {{ .Content }}
         </div>
     </article>
-
-    {{ if isset .Params "participants" }}
-      <h2>Participants:</h2>
-      {{ partial "authors.html" .Params.participants }}
-    {{end}}
-
+    
+    {{ if eq .Params.participants_block_position "down" }}
+            <div class="container">
+                <div class="row">
+                    <h3>Participants:</h3>
+                    {{$participants := .Params.participants}}
+                    {{ range where .Site.Pages "Section" "member" }}
+                       {{ $current_member := . }}
+                        {{ range $participants }} 
+                            {{ if eq $current_member.Params.id .id }}
+                                {{ partial "member_small.html" $current_member }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+    {{ end }}
+ 
     {{ partial "section_pager.html" . }}
 
 </div>
