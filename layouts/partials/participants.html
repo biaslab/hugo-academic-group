@@ -1,0 +1,38 @@
+{{$participants := .Params.participants}}
+                {{$pages := .Site.Pages }}
+                
+                {{ range (sort $participants "position")}} 
+                    {{ $current_member := . }}
+                    {{ range where $pages "Section" "member" }}
+                         {{ if eq $current_member.id .Params.id }}
+                            <div class="col-xs-12 col-md-2"> 
+                                <div id="profile">
+                                    <a href="{{ .Permalink }}">
+                                        <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
+                                    </a>
+                                    <div class="portrait-title">
+                                        <h3 itemprop="name"><a href="{{.Permalink }}">{{ .Params.name }}</a></h3>
+                                        <h4>{{ $current_member.role }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                         {{ end }}
+                     {{ end }}
+                     {{ if not .is_member }}
+                             <div class="col-xs-12 col-md-2"> 
+                                <div id="profile">
+                                    <a href="{{ .Permalink }}">
+                                        <div class="small-portrait"
+                                            itemprop="image"
+                                            style="background-image:url('{{.Site.BaseURL}}/img/portraits/portrait.jpg');"></div>
+                                    </a>
+                                    <div class="portrait-title">
+                                        <h3 itemprop="name">{{ .name }}</h3>
+                                        <h4>{{ $current_member.role }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                     {{ end }}
+                {{ end }}
+                
+

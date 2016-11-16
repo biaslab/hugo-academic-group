@@ -88,6 +88,27 @@
                  <div class="article-style">{{ .Content }}</div>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="col-sm-12">
+            <h3>Projects</h3>
+            {{ $member_id := .Params.id }}
+            {{$projects:= where .Site.Pages "Section" "project" }}
+            <ul>
+            {{ range $projects}}
+                {{ $current_project := . }}
+                {{ range .Params.participants }}
+                    {{ if eq .id $member_id }}
+                    <li>
+                        <a href="{{$current_project.Permalink}}">{{ $current_project.Title }}</a>
+                    </li>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            </ul>
+            </div>
+        </div>
+
     </div>
 </div>
 </div>
