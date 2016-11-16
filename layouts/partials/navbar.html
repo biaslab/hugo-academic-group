@@ -19,11 +19,12 @@
                 {{ end }}
                 {{ if isset .Site.Params "navbar_hierarchy" }}
                 {{ $hierarchy_len := len .Site.Params.navbar_hierarchy }} 
-                    {{ range first (sub $hierarchy_len 1) (sort .Site.Params.navbar_hierarchy ".position") }}
-                        <a href="{{.link}}">{{.name}}</a>
-                        /
+                    {{if gt $hierarchy_len 1}} 
+                        {{ range first (sub $hierarchy_len 1) (sort .Site.Params.navbar_hierarchy ".position") }}
+                            <a href="{{.link}}">{{.name}}</a>
+                            /
+                        {{ end }}
                     {{ end }}
-                
                     {{ range last 1 (sort .Site.Params.navbar_hierarchy ".position") }}
                         <a href="{{.link}}">{{.name | safeHTML }}</a>
                     {{ end }}
