@@ -11,15 +11,7 @@
         <div id="participants"> 
             <div class="container">
                 <div class="row">
-                {{$participants := .Params.participants}}
-                {{ range where .Site.Pages "Section" "member" }}
-                   {{ $current_member := . }}
-                   {{ range $participants }} 
-                            {{ if eq $current_member.Params.id .id }}
-                                {{ partial "member_small.html" $current_member }}
-                            {{ end }}
-                        {{ end }}
-                {{ end }}
+                    {{ partial "participants" . }}               
                 </div>
             </div>
         </div>
@@ -36,15 +28,7 @@
         <div id="participants"> 
             <div class="container">
                 <div class="row">
-                    {{$participants := .Params.participants}}
-                    {{ range where .Site.Pages "Section" "member" }}
-                       {{ $current_member := . }}
-                        {{ range $participants }} 
-                            {{ if eq $current_member.Params.id .id }}
-                                {{ partial "member_small.html" $current_member }}
-                            {{ end }}
-                        {{ end }}
-                    {{ end }}
+                    {{ partial "participants" . }}               
                 </div>
             </div>
         </div>
