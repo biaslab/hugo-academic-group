@@ -8,8 +8,6 @@
 <section id="projects" class="home-section">
     <div class="container">
         <div class="row">
-kek
-            {{ .Site.Params.uglyURLs }}
             <div class="col-xs-12 col-md-4 section-heading">
                 <h1><a href="{{.Site.BaseURL}}/project/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.projects.title }}{{ . | markdownify }}{{ end }}</a></h1>
                 {{ with .Site.Params.projects.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
