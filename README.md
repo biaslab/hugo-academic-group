@@ -12,7 +12,7 @@ An academic group website theme for Hugo.
     cd website_name
  ```
 
- 2. Clone the theme to `themes/hugo-academic-group folder`:
+ 2. Clone (or download) the theme to `themes/hugo-academic-group folder`:
 
  ```
     git clone git@github.com:spsbrats/hugo-academic-group.git themes/hugo-academic-group
