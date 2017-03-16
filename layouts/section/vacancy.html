@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Vacancies</h1>
+
+            {{ range .Data.Pages.GroupByDate "2006" }}
+            <div class="row" id="pub_list">
+                <div class="col-md-2">
+                    <h3>{{ .Key }}</h3>
+                </div>
+                <div class="col-md-10">
+                        {{ range .Pages.ByDate.Reverse }}
+                            <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
+                            {{.Params.description | markdownify}}
+                        {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

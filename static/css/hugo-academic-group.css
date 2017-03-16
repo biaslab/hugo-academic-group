@@ -434,6 +434,10 @@ ul.share li:hover .fa {
     padding-right: 0;
 }
 
+img.in-text {
+    margin: 10px;
+}
+
 .article-style p {
     text-align: justify;
 }

@@ -1,0 +1,21 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+<div class="container">
+    
+    <article class="article article-project" itemscope itemtype="http://schema.org/Article">
+        <h1 itemprop="name">{{ .Title }}</h1>
+        
+       <div class="article-style" itemprop="articleBody">
+            {{ .Content }}
+        </div>
+
+        {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to external website</a>{{ end }}
+
+    </article>
+    
+   {{ partial "section_pager.html" . }}
+
+</div>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
