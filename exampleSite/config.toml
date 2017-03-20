@@ -77,6 +77,14 @@ tag = "tags"
     subtitle = ""
     count = 3
     str_all = "More Projects"
+  
+  # Vacancies section
+  # Section will only be displayed if there are valid vacancies in `content/vacancy`
+  [params.vacancies]
+    title = "Vacancies"
+    subtitle = ""
+    count = 3
+    str_all = "More Vacancies"
 
   # Contact section.
   [params.contact]
