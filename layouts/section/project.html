@@ -12,9 +12,15 @@
                     <h3>{{ .Key }}</h3>
                 </div>
                 <div class="col-md-10">
-                        {{ range .Pages.ByDate.Reverse }}
-                            <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                            {{.Params.description | markdownify}}
+                    {{ range .Pages.ByDate.Reverse }}
+                        <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
+                        {{ if .Params.short_description }}
+                            {{ .Params.short_description | markdownify}}
+                        {{ else }}
+                            {{ with .Params.description }}
+                                {{ . | markdownify}}
+                            {{ end }}
+                        {{ end }}
                         {{ end }}
                 </div>
             </div>

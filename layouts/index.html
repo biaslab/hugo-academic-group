@@ -34,10 +34,16 @@
                             </a>
                         {{end}}
 
-                        {{ with .Params.description }}
+                        {{ if .Params.short_description }}
                             <p class="article-style" itemprop="articleBody">
-                                {{ . | markdownify }}
+                                {{ .Params.short_description | markdownify}}
                             </p>
+                        {{ else }}
+                            {{ with .Params.description }}
+                            <p class="article-style" itemprop="articleBody">
+                                {{ . | markdownify}}
+                            </p>
+                            {{ end }}
                         {{ end }}
 
                         <p class="read-more">
