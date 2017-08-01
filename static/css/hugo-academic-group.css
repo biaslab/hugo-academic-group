@@ -24,7 +24,7 @@ header{
     text-align: center;
     color: #fff;
     background-position: center;
-    min-height: 100%;
+    /* min-height: 100%;  */
 }
 
 .header-content {
@@ -258,14 +258,14 @@ span.darknav {
 .portrait-title h2 {
     font-size: 1.75em;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     color: #000000;
     margin: 20px 0 10px 0;
 }
 
 .portrait-title h3 {
     font-size: 1.13em;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     color: #AAAAAA;
     margin: 5px 0 10px 0;
@@ -740,7 +740,7 @@ nav#navbar-main li {
     text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 988px) {
     .navbar {
         min-height: 50px !important;
     }
@@ -762,6 +762,10 @@ nav#navbar-main li {
     .navbar-fixed-top {
         top: 0;
         border-width: 0 0 1px;
+    }
+    .navbar-static-top {
+        top: 0;
+        border-width: 0 0 1px;   
     }
     .navbar-collapse.collapse {
         display: none!important;
