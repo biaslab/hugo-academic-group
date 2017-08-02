@@ -740,7 +740,7 @@ nav#navbar-main li {
     text-decoration: none;
 }
 
-@media screen and (max-width: 988px) {
+@media screen and (max-width: 768px) {
     .navbar {
         min-height: 50px !important;
     }
