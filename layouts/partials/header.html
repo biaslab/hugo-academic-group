@@ -14,7 +14,7 @@
     <script src="{{ .Site.BaseURL }}/js/hugo-academic-group.js"></script>
 
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/bootstrap.min.css">
-    <script src="{{ .Site.BaseURL }}/js/bootstrap.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/bootstrap.min.js"></script>  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
     <!-- Code highlighting -->
@@ -31,7 +31,7 @@
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ $.Site.BaseURL }}/css/{{ . }}">
     {{ end }}
-
+    
 
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}/img/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="{{ .Permalink }}">
@@ -39,4 +39,6 @@
     <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
 </head>
-<body id="top_body">
+
+<body>
+<div class="home-anchor" id="home"></div>

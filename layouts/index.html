@@ -2,6 +2,7 @@
 {{ partial "navbar.html" . }}
 {{ partial "slogan.html" . }}
 
+
 <!-- Projects Section -->
 {{ $projects_len := len (where .Data.Pages "Type" "project") }}
 {{ if gt $projects_len 0 }}
@@ -103,6 +104,7 @@
     </div>
 </section>
 {{ end }}
+
 
 <!-- Blog Posts Section -->
 {{ $posts_len := len (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}

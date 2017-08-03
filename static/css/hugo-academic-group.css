@@ -87,6 +87,16 @@ body {
         margin-top: 51px;
         padding-top: 0;
     }
+    .home-anchor {
+        top: -51px;
+    }
+}
+
+.home-anchor {
+    display: block;
+    position: relative;
+    top: -71px;
+    visibility: hidden;
 }
 
 h1,
