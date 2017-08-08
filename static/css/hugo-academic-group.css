@@ -621,6 +621,16 @@ section#projects.home-section .project-tags {
     color: #9c9c9c;
 }
 
+.project-picture {
+    background-image: url('../img/normal.png');
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px 10px 10px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
+
 /*************************************************
  *  Contact
  **************************************************/
