@@ -1,0 +1,34 @@
+{{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
+{{ if gt $pubs_len 0 }}
+<section id="publications" class="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1><a href="{{.Site.BaseURL}}/publication/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.publications.title }}{{ . | markdownify }}{{ end }}</a></h1>
+                {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+            </div>
+            <div class="col-xs-12 col-md-8">
+                {{ if .Site.Params.publications.detailed_list }}
+                {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
+                {{ partial "publication_li_detailed" . }}
+                {{ end }}
+                {{ else }}
+                    {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
+                    {{ partial "publication_li_detailed" . }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        <div>
+            {{ if gt $pubs_len .Site.Params.publications.count }}
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}/publication/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                    {{ with .Site.Params.publications.str_all }}{{ . | markdownify }}{{ end }}
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

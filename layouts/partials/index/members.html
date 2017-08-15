@@ -1,0 +1,28 @@
+<section id="members" class="home-section">
+    <div class="container">
+        
+        <!-- Section heading -->
+        <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/{{if .Site.Params.uglyURLs}}index.html{{end}}"> Members </a></h1>
+            </div>
+        </div>
+       
+        <!-- Members -->
+        <div class="row">
+            {{ range (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
+                {{ partial "member_simple" . }}
+            {{ end }}
+        </div>
+        
+        <!-- Link to all members -->
+        <div>
+            <p class="view-all">
+                <a href="{{ .Site.BaseURL }}/member/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                    All members
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
