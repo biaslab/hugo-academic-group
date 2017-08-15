@@ -1,0 +1,51 @@
+{{ $posts_len := len (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
+{{ if gt $posts_len 0 }}
+<section id="posts" class="home-section">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Section heading -->
+            <div class="col-xs-12 col-md-4 section-heading">
+                <h1><a href="{{ $.Site.BaseURL }}/post/{{if .Site.Params.uglyURLs}}index.html{{end}}"> {{ with .Site.Params.posts.title }}{{ . | markdownify }}{{ end }}</a></h1>
+                {{ with .Site.Params.posts.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+            </div>
+            
+            <!-- Posts -->
+            <div class="col-xs-12 col-md-8">
+                {{ range first .Site.Params.posts.count (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
+                    <div class="article-list-item" itemscope itemprop="blogPost">
+                        {{ if .Params.image }}
+                            <a href="{{ .Permalink }}">
+                                <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">
+                            </a>
+                        {{end}}
+                        <h3 class="article-title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
+                        <p class="article-style" itemprop="articleBody">
+                            {{ .Params.short_text }}
+                        </p>
+                        <p class="read-more">
+                            <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
+                                {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
+                            </a>
+                        </p>
+                    </div>
+                {{ end }}
+            </div>
+            
+        </div>
+
+        <!-- Link to all posts -->
+        <div>
+            {{ if gt $posts_len .Site.Params.posts.count }}
+                <p class="view-all">
+                    <a href="{{ .Site.BaseURL }}/post/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                        {{ with .Site.Params.posts.str_all }}{{ . | markdownify }}{{ end }}
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </p>
+            {{ end }}
+        </div>
+        
+    </div>
+</section>
+{{ end }}
