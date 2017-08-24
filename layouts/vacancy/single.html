@@ -6,7 +6,7 @@
         <h1 itemprop="name">{{ .Title }}</h1>
         
        <div class="article-style" itemprop="articleBody">
-            {{ .Content }}
+            {{ .Content | markdownify }}
         </div>
 
         {{ with .Params.external_link }}<a class="btn btn-primary btn-outline" href="{{ . }}">Go to external website</a>{{ end }}

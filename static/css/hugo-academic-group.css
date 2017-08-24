@@ -80,6 +80,7 @@ body {
     /* Offset body content by navbar height. */
     margin-top: 71px;
     padding-top: 0;
+    counter-reset: captions;
 }
 @media screen and (max-width: 768px) {
     body {
@@ -159,7 +160,7 @@ figcaption {
     margin-top: 0.75em;
     line-height: 1.25;
     font-size: 1rem;
-    margin-bottom: 1.65rem;
+    margin-bottom: 0.75rem;
     font-family: 'Lato', sans-serif;
     counter-increment: captions;
 }
@@ -432,20 +433,49 @@ ul.share li:hover .fa {
     height: auto;
 }
 
+.article-style h1 {
+    clear: both;
+}
+
+.article-style figure.left-inline {
+    display: inline-block;
+    float:left;
+    margin: 0px 10px 0px 10px;
+}
+
+.article-style figure figcaption {
+    text-align: center;
+}
+
+.article-style figure.right-inline {
+    display: inline-block;
+    float: right;
+    margin: 0px 10px 0px 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .article-style figure.left-inline {
+        display: block;
+        float: none;
+        margin: 0 auto;
+    }
+
+    .article-style figure.right-inline {
+        display: block;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
 .article-style img,
 .article-style video {
     box-shadow: 1px 1px 0px #edefed,-1px -1px 0px #edefed,1px -1px 0px #edefed,-1px 1px 0px #edefed;
-    /*margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;*/
     margin: 40px auto 40px auto;
     padding-left: 0;
     padding-right: 0;
 }
 
 .article-style {
-    /* margin: 40px auto 40px auto; */
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
@@ -455,10 +485,11 @@ ul.share li:hover .fa {
 .embed {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; 
-    height: 0; 
+    padding-top: 30px;
+    height: 0;
     overflow: hidden;
 }
+
 .embed iframe {
     position: absolute;
     top: 0;
@@ -505,6 +536,8 @@ img.in-text {
 
 #comments {
     padding: 20px;
+}
+
 }
 
 /*************************************************
