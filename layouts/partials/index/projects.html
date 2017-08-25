@@ -14,7 +14,7 @@
         <!-- Projects -->
         {{ range first .Site.Params.projects.count (where .Data.Pages "Type" "project") }}
             <div class="row">
-                <div class="col-xs-12 col-md-2">
+                <div class="hidden-xs col-md-2">
                     <a href={{.Permalink}}>
                         {{ if .Params.picture }}
                             <div class="project-picture" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.picture }}')"></div>
@@ -23,9 +23,21 @@
                         {{ end }}
                     </a>
                 </div>
+                
+                <div class="article-list-item">
+                    
+                    <div class="visible-xs col-xs-5">
+                        <a href={{.Permalink}}>
+                            {{ if .Params.picture }}
+                                <div class="project-picture" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.picture }}')"></div>
+                            {{ else }}
+                                <div class="project-picture"></div>
+                            {{ end }}
+                        </a>
+                    </div>
             
-                <div class="col-xs-12 col-md-10">
-                    <div class="article-list-item">
+                    
+                    <div class="col-xs-7 col-md-10">      
                         {{ if .Content }}
                             <h3 class="article-title" itemprop="name">
                                 <a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a>
@@ -37,7 +49,10 @@
                             </h3>
                             {{ end }}
                         {{ end }}
+                    </div>    
 
+                    
+                    <div class="col-xs-12 col-md-10">
                         {{ if .Params.image }}
                             <a href="{{ .Permalink }}">
                                 <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">

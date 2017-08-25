@@ -632,7 +632,10 @@ section#projects.home-section .project-tags {
 }
 
 @media screen and (max-width: 768px) {
-    /* .project-picture { display: none; } */
+    .project-picture { 
+        display: block;
+        margin: 0 auto; 
+    }
 }
 
 /*************************************************
