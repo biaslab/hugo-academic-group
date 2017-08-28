@@ -625,7 +625,7 @@ section#projects.home-section .project-tags {
     background-image: url('../img/normal.png');
     width: 150px;
     height: 150px;
-    margin: 20px 10px 10px 10px;
+    margin: 20px 10px 10px -5px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -634,7 +634,6 @@ section#projects.home-section .project-tags {
 @media screen and (max-width: 768px) {
     .project-picture { 
         display: block;
-        margin: 0 auto; 
     }
 }
 

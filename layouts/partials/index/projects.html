@@ -24,18 +24,17 @@
                     </a>
                 </div>
                 
+                <div class="visible-xs col-xs-5">
+                    <a href={{.Permalink}}>
+                        {{ if .Params.picture }}
+                            <div class="project-picture" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.picture }}')"></div>
+                        {{ else }}
+                            <div class="project-picture"></div>
+                        {{ end }}
+                    </a>
+                </div>
+
                 <div class="article-list-item">
-                    
-                    <div class="visible-xs col-xs-5">
-                        <a href={{.Permalink}}>
-                            {{ if .Params.picture }}
-                                <div class="project-picture" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.picture }}')"></div>
-                            {{ else }}
-                                <div class="project-picture"></div>
-                            {{ end }}
-                        </a>
-                    </div>
-            
                     
                     <div class="col-xs-7 col-md-10">      
                         {{ if .Content }}
@@ -51,7 +50,6 @@
                         {{ end }}
                     </div>    
 
-                    
                     <div class="col-xs-12 col-md-10">
                         {{ if .Params.image }}
                             <a href="{{ .Permalink }}">
