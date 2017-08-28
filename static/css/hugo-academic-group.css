@@ -478,7 +478,7 @@ ul.share li:hover .fa {
 .article-style {
     padding-left: 0;
     padding-right: 0;
-    margin: 0 auto;
+    margin: 10px auto 10px auto;
     position: relative;
 }
 
@@ -619,6 +619,22 @@ section#projects.home-section .project-summary {
 section#projects.home-section .project-tags {
     font-size: 14px;
     color: #9c9c9c;
+}
+
+.project-picture {
+    background-image: url('../img/normal.png');
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px 10px -5px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .project-picture { 
+        display: block;
+    }
 }
 
 /*************************************************
