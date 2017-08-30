@@ -11,10 +11,10 @@
         <h1 itemprop="name">{{ .Title }}</h1>
 
         <div class="row">
-            <div class="col-xs-12 col-md-6 article-published-at">
+            <div class="col-xs-6 article-published-at">
                 <i>Published on:</i> <p>{{ .Date.Format "Jan 2, 2006" }}</p>
             </div>
-            <div class="col-xs-12 col-md-6 article-authors">
+            <div class="col-xs-6 article-authors">
                 <i>Authors:</i>
                 {{ partial "authors" .Params.authors }}
             </div>
