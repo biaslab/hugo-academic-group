@@ -438,9 +438,8 @@ ul.share li:hover .fa {
 }
 
 .article-style figure.left-inline {
-    display: inline-block;
     float:left;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 10px 0px 0px;
 }
 
 .article-style figure figcaption {
@@ -448,9 +447,8 @@ ul.share li:hover .fa {
 }
 
 .article-style figure.right-inline {
-    display: inline-block;
     float: right;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 0px 0px 10px;
 }
 
 @media screen and (max-width: 768px) {
