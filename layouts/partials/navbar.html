@@ -2,12 +2,6 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
     <div class="container">
 
-        {{ if .Site.Params.positions_available }}
-            <a class="github-fork-ribbon hidden-xs" href="#vacancies" data-ribbon="Open positions
-            available" title="Open positions available">Open positions available</a>
-        {{ end }}
-          
-
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
@@ -59,6 +53,7 @@
                         <li class="nav-item"><a data-scroll href="{{ $baseUrl }}{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 {{ end }}
+                
             </ul>
 
         </div><!-- /.navbar-collapse -->

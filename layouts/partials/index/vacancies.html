@@ -34,6 +34,11 @@
                         {{ end }}
 
                         <p class="read-more">
+                            {{ with .Params.external_link }}
+                                <a href="{{ . }}" class="btn btn-primary btn-outline">
+                                   Go to external website
+                                </a>
+                            {{ end }}
                             <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
                                 {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
                             </a>
