@@ -11,7 +11,9 @@
         <!-- Members -->
         <div class="row">
             {{ range (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
-                {{ partial "member_simple" . }}
+                {{ if not .Params.is_former_member }}
+                    {{ partial "member_simple" . }}
+                {{ end }}
             {{ end }}
         </div>
         
