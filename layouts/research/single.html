@@ -1,0 +1,36 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+        {{ if .Params.image }}
+            <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">
+        {{end}}
+
+        <h1 itemprop="name">{{ .Title }}</h1>
+
+        <div class="row">
+            <div class="col-xs-6 article-published-at">
+                <i>Published on:</i> <p>{{ .Date.Format "Jan 2, 2006" }}</p>
+            </div>
+            <div class="col-xs-6 article-authors">
+                <i>Authors:</i>
+                {{ partial "authors" .Params.authors }}
+            </div>
+        </div>
+
+        <div class="article-style" itemprop="articleBody">
+            {{ .Content }}
+        </div>
+
+
+
+    </article>
+
+    {{ partial "section_pager.html" . }}
+
+</div>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
