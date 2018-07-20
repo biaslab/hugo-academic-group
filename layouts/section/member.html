@@ -13,7 +13,7 @@
 {{ $alumni_len := len (where .Data.Pages ".Params.is_former_member" true ) }}
 {{ if gt $alumni_len 0 }}
 <div class="container">
-    <h1>Former members</h1>
+    <h1>Alumni</h1>
     {{ range where .Data.Pages ".Params.is_former_member" true }}
         {{ partial "member_li" . }}
     {{ end }}
