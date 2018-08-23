@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="hidden-xs col-md-2">
+      <a href={{.Permalink}}>
+          {{ if .Params.picture }}
+              <div class="project-picture" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.picture }}')"></div>
+          {{ else }}
+              <div class="project-picture"></div>
+          {{ end }}
+      </a>
+  </div>
+  
+  <div class="visible-xs col-xs-5">
+      <a href={{.Permalink}}>
+          {{ if .Params.picture }}
+              <div class="project-picture" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.picture }}')"></div>
+          {{ else }}
+              <div class="project-picture"></div>
+          {{ end }}
+      </a>
+  </div>
+
+  <div class="article-list-item">
+      
+      <div class="col-xs-7 col-md-10">      
+          {{ if .Content }}
+              <h3 class="article-title" itemprop="name">
+                  <a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a>
+              </h3>
+          {{ else }}
+              {{ with .Params.external_link }}
+              <h3 class="article-title" itemprop="name">
+                  <a href="{{ . }}">
+              </h3>
+              {{ end }}
+          {{ end }}
+      </div>    
+
+      <div class="col-xs-12 col-md-10">
+          {{ if .Params.image }}
+              <a href="{{ .Permalink }}">
+                  <img src="{{ $.Site.BaseURL }}/img/{{ .Params.image }}" class="article-banner" itemprop="image">
+              </a>
+          {{end}}
+
+          {{ if .Params.short_description }}
+              <p class="article-style" itemprop="articleBody">
+                  {{ .Params.short_description | markdownify}}
+              </p>
+          {{ else }}
+              {{ with .Params.description }}
+              <p class="article-style" itemprop="articleBody">
+                  {{ . | markdownify}}
+              </p>
+              {{ end }}
+          {{ end }}
+
+          <p class="read-more">
+              <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
+                  {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
+              </a>
+          </p>
+      </div>
+  </div>
+</div>

@@ -8,14 +8,8 @@
                 {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
-                {{ if .Site.Params.publications.detailed_list }}
                 {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
-                {{ partial "publication_li_detailed" . }}
-                {{ end }}
-                {{ else }}
-                    {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
                     {{ partial "publication_li_detailed" . }}
-                    {{ end }}
                 {{ end }}
             </div>
         </div>
