@@ -7,8 +7,9 @@ project_id = ""
 short_description = ""
 title = "Deep Learning"
 [[participants]]
-    name = ""
+    name = "Member 1"
     is_member = true
+    id = "member1"
 +++
 
 # Et sensus uncos Troiaeque mori candidaque ostentis
