@@ -34,7 +34,7 @@
                 {{ end }}
                 <div itemprop="datePublished">
                     {{ if .Params.to_be_published }}
-                        To be published in {{ .Date.Format "2006" }}
+                        To be published in {{ dateFormat "January, 2006" .Params.publication_date }}
                     {{ else }}
                         {{ .Date.Format "January, 2006" }}
                     {{ end }}
