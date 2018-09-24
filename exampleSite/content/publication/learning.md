@@ -17,7 +17,7 @@ url_slides = ""
 url_video = ""
 
 [[authors]]
-    name = "member1"
+    name = "Member 1"
     is_member = true
 [[authors]]
     name = "Not a Member"
