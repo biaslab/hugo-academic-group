@@ -32,6 +32,11 @@
                 {{ else }}
                     {{ .Params.publication | markdownify }}
                 {{ end }}
+                {{ with .Params.award }}
+                    <br>
+                        {{ . }}
+                    </br>
+                {{ end }}
                 <div itemprop="datePublished">
                     {{ if .Params.to_be_published }}
                         To be published in {{ dateFormat "January, 2006" .Params.publication_date }}
