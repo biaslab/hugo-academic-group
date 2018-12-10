@@ -1,13 +1,13 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
-<div class="container">
 
+<div class="container">
 
     <article class="article article-project" itemscope itemtype="http://schema.org/Article">
         <h1 itemprop="name">{{ .Title }}</h1>
 
         {{ if eq .Params.participants_block_position "up" }}
-        <h3>Participants</h3>
+        <h3>Instructors</h3>
         <div id="participants">
             <div class="container">
                 <div class="row">
