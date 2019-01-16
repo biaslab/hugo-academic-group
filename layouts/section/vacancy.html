@@ -13,8 +13,16 @@
                 </div>
                 <div class="col-md-10">
                         {{ range .Pages.ByDate.Reverse }}
-                            <h3><a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a></h3>
-                            {{.Params.description | markdownify}}
+                            {{ if .Content }}
+                                {{ .Scratch.Set "link" .Permalink }}
+                            {{ else if .Params.external_link }}
+                                {{ .Scratch.Set "link" .Params.external_link }}
+                            {{ end }}
+                    
+                            <h3><a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a></h3>
+                            {{ with .Params.description }}
+                                {{ . | markdownify}}
+                            {{ end }}
                         {{ end }}
                 </div>
             </div>

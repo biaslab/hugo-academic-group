@@ -14,18 +14,15 @@
             <div class="col-xs-12 col-md-8">
                 {{ range first .Site.Params.vacancies.count (where .Data.Pages "Type" "vacancy") }}
                     <div class="article-list-item">
-
                         {{ if .Content }}
-                            <h3 class="article-title" itemprop="name">
-                                <a href="{{ .Permalink }}" itemprop="url">{{ .Title }}</a>
-                            </h3>
-                        {{ else }}
-                            {{ with .Params.external_link }}
-                            <h3 class="article-title" itemprop="name">
-                                <a href="{{ . }}">
-                            </h3>
-                            {{ end }}
+                            {{ .Scratch.Set "link" .Permalink}}
+                        {{ else if .Params.external_link }}
+                            {{ .Scratch.Set "link" .Params.external_link}}
                         {{ end }}
+                        
+                        <h3 class="article-title" itemprop="name">
+                            <a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a>
+                        </h3>
 
                         {{ with .Params.description }}
                             <p class="article-style" itemprop="articleBody">
@@ -34,14 +31,17 @@
                         {{ end }}
 
                         <p class="read-more">
-                            {{ with .Params.external_link }}
-                                <a href="{{ . }}" class="btn btn-primary btn-outline">
-                                   Go to external website
-                                </a>
+                            {{ if .Params.external_link }}
+                            <a href="{{ .Params.external_link }}" class="btn btn-primary btn-outline">
+                                Go to external website
+                            </a>
                             {{ end }}
-                            <a href="{{ .Permalink }}" class="btn btn-primary btn-outline">
+                            
+                            {{ if .Content }}
+                            <a href="{{ .Scratch.Get "link" }}" class="btn btn-primary btn-outline">
                                 {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
                             </a>
+                            {{ end }}
                         </p>
                     </div>
                 {{ end }}
