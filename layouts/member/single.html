@@ -82,15 +82,15 @@
             </div>
 
         </div>
-        
-           {{ $.Scratch.Add "found" false }}
+
+           {{ .Scratch.Add "found" false }}
             {{ $member_id:= .Params.id }}
             {{ $projects:= where .Site.Pages "Section" "project" }}
             {{ range $projects }}
                 {{ $current_project := . }}
                 {{ range .Params.participants }}
                     {{ if eq .id $member_id }}
-                    {{ if not ($.Scratch.Get "found") }}    
+                    {{ if not ($.Scratch.Get "found") }}
                         <div class="row">
                         <div class="col-sm-12">
                             <h3>Projects</h3>
@@ -103,19 +103,19 @@
                     {{ end }}
                 {{ end }}
             {{ end }}
-            {{ if ($.Scratch.Get "found") }}
+            {{ if (.Scratch.Get "found") }}
                 </ul>
                 </div>
             </div>
             {{ end }}
-            
+            {{ .Scratch.Delete "found" }}
         <div class="row">
             <div class="col-sm-12">
                 <h3>Biography</h3>
                  <div class="article-style">{{ .Content }}</div>
             </div>
         </div>
-        
+
     </div>
 </div>
 </div>
