@@ -45,12 +45,12 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{.Name}} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                               {{ range .Children }}
-                                <li><a href="{{ $baseUrl }}{{.URL}}">{{ .Name }}</a></li>
+                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                               {{end}}
                             </ul>
                           </li>
                     {{else}}
-                        <li class="nav-item"><a data-scroll href="{{ $baseUrl }}{{ .URL }}">{{ .Name }}</a></li>
+                        <li class="nav-item"><a data-scroll href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 {{ end }}
                 
