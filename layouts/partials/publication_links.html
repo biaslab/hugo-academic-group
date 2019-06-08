@@ -11,6 +11,7 @@
 {{ with $.Params.url_code }}<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}">Code</a>{{ end }}
 {{ with $.Params.url_dataset }}<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}">Dataset</a>{{ end }}
 {{ with $.Params.url_project }}<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}">Project</a>{{ end }}
+{{ with $.Params.url_poster }}<a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ . | absURL }}">Poster</a>{{ end }}
 
 {{ range $.Params.url_custom }}
 <a class="btn btn-primary btn-outline{{ if $is_list }} btn-xs{{end}}" href="{{ .url | absURL }}">{{ .name }}</a>
