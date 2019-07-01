@@ -21,7 +21,7 @@
         {{end}}
 
         <h3>Abstract</h3>
-        <p class="pub-abstract" itemprop="text">{{ .Params.abstract }}</p>
+        <p class="pub-abstract" itemprop="text">{{ .Params.abstract | markdownify }}</p>
 
         <div class="row">
             <div class="col-sm-10">
