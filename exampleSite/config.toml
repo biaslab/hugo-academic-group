@@ -97,7 +97,7 @@ tag = "tags"
 
   [[menu.main]]
       name = "Home"
-      url = "#top"
+      url = "/#top"
       weight = 1
 
   [[menu.main]]
@@ -107,26 +107,26 @@ tag = "tags"
 
   [[menu.main]]
       name = "Publications"
-      url = "#publications"
+      url = "/#publications"
       weight = 3
 
     [[menu.main]]
       name = "Projects"
-      url = "#projects"
+      url = "/#projects"
       weight = 4
 
   [[menu.main]]
       name = "Members"
-      url = "#members"
+      url = "/#members"
       weight = 5
 
   [[menu.main]]
       name = "Blog"
-      url = "#posts"
+      url = "/#posts"
       weight = 6
 
 
   [[menu.main]]
       name = "Contact"
-      url = "#contact"
+      url = "/#contact"
       weight = 7
