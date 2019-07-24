@@ -15,7 +15,7 @@ An academic group website theme for Hugo.
  2. Clone (or download) the theme to `themes/hugo-academic-group folder`:
 
  ```
-    git clone git@github.com:spsbrats/hugo-academic-group.git themes/hugo-academic-group
+    git clone git@github.com:biaslab/hugo-academic-group.git themes/hugo-academic-group
  ```
 
  3. Copy all the contents of the `exampleSite` folder to the root of your website, overwriting if necessary:
