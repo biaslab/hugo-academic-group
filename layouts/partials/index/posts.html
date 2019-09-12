@@ -1,4 +1,4 @@
-{{ $posts_len := len (where (where .Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
+{{ $posts_len := len (where (where .Site.RegularPages "Type" "post") ".Params.notonhomepage" nil) }}
 {{ if gt $posts_len 0 }}
 <section id="posts" class="home-section">
     <div class="container">
@@ -12,7 +12,7 @@
             
             <!-- Posts -->
             <div class="col-xs-12 col-md-8">
-                {{ range first .Site.Params.posts.count (sort (where .Data.Pages "Type" "post") ".Params.sort_position") }}
+                {{ range first .Site.Params.posts.count (sort (where .Site.RegularPages "Type" "post") ".Params.sort_position") }}
                     {{ partial "index/single_post" .}}
                 {{ end }}
             </div>

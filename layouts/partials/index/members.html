@@ -10,7 +10,7 @@
        
         <!-- Members -->
         <div class="row">
-            {{ range (sort (where .Data.Pages "Type" "member") ".Params.sort_position")}}
+            {{ range (sort (where .Site.RegularPages "Type" "member") ".Params.sort_position")}}
                 {{ if not .Params.is_former_member }}
                     {{ partial "member_simple" . }}
                 {{ end }}

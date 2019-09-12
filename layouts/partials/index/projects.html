@@ -1,4 +1,4 @@
-{{ $projects_len := len (where .Data.Pages "Type" "project") }}
+{{ $projects_len := len (where .Site.RegularPages "Type" "project") }}
 {{ if gt $projects_len 0 }}
 <section id="projects" class="home-section">
     <div class="container">
@@ -13,7 +13,7 @@
         
         <!-- Projects -->
         
-        {{ range first .Site.Params.projects.count (sort (where .Data.Pages "Type" "project") ".Params.sort_position") }}
+        {{ range first .Site.Params.projects.count (sort (where .Site.RegularPages "Type" "project") ".Params.sort_position") }}
             {{ partial "index/single_project" . }}
         {{ end }}
             

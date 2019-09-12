@@ -1,4 +1,4 @@
-{{ $pubs_len := len (where .Data.Pages "Type" "publication") }}
+{{ $pubs_len := len (where .Site.RegularPages "Type" "publication") }}
 {{ if gt $pubs_len 0 }}
 <section id="publications" class="home-section">
     <div class="container">
@@ -8,7 +8,7 @@
                 {{ with .Site.Params.publications.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             <div class="col-xs-12 col-md-8">
-                {{ range first .Site.Params.publications.count (where .Data.Pages "Type" "publication") }}
+                {{ range first .Site.Params.publications.count (where .Site.RegularPages "Type" "publication") }}
                     {{ partial "publication_li_detailed" . }}
                 {{ end }}
             </div>

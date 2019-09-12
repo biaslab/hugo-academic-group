@@ -1,4 +1,4 @@
-{{ $vacancies_len := len (where .Data.Pages "Type" "vacancy") }}
+{{ $vacancies_len := len (where .Site.RegularPages "Type" "vacancy") }}
 {{ if gt $vacancies_len 0 }}
 <section id="vacancies" class="home-section">
     <div class="container">
@@ -12,7 +12,7 @@
             
             <!-- Vacancies -->
             <div class="col-xs-12 col-md-8">
-                {{ range first .Site.Params.vacancies.count (where .Data.Pages "Type" "vacancy") }}
+                {{ range first .Site.Params.vacancies.count (where .Site.RegularPages "Type" "vacancy") }}
                     <div class="article-list-item">
                         {{ if .Content }}
                             {{ .Scratch.Set "link" .Permalink}}
