@@ -801,7 +801,7 @@ nav#navbar-main li {
     text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     .navbar {
         min-height: 50px !important;
     }
