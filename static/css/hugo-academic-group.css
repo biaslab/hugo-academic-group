@@ -742,6 +742,11 @@ footer a#back_to_top i {
     color: #fff;
 }
 
+.btn-pitch.btn-outline {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
 /*************************************************
  *  Navigation Bar
  **************************************************/
@@ -924,4 +929,8 @@ table > thead:first-child > tr:first-child > td {
 .header-table tr td:last-child,
 .header-table tr th:last-child {
     border-right: 0;
+}
+
+.content-center {
+    text-align: center;
 }

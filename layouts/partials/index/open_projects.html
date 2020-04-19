@@ -1,4 +1,4 @@
-{{ $vacancies_len := len (where .Site.RegularPages "Type" "vacancy") }}
+{{ $vacancies_len := len (where .Site.RegularPages "Type" "open-projects") }}
 {{ if gt $vacancies_len 0 }}
 <section id="vacancies" class="home-section">
     <div class="container">
@@ -6,13 +6,13 @@
             
             <!-- Section heading -->
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1><a href="{{.Site.BaseURL}}/vacancy/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.vacancies.title }}{{ . | markdownify }}{{ end }}</a></h1>
-                {{ with .Site.Params.vacancies.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+                <h1><a href="{{.Site.BaseURL}}open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.open_projects.title }}{{ . | markdownify }}{{ end }}</a></h1>
+                {{ with .Site.Params.open_projects.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             
             <!-- Vacancies -->
             <div class="col-xs-12 col-md-8">
-                {{ range first .Site.Params.vacancies.count (where .Site.RegularPages "Type" "vacancy") }}
+                {{ range first .Site.Params.open_projects.count (where .Site.RegularPages "Type" "open-projects") }}
                     <div class="article-list-item">
                         {{ if .Content }}
                             {{ .Scratch.Set "link" .Permalink}}
@@ -51,8 +51,8 @@
         <!-- Link to all vacancies -->
         <div>
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}/vacancy/{{if .Site.Params.uglyURLs}}index.html{{end}}">
-                    All vacancies
+                <a href="{{ .Site.BaseURL }}open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                    {{ with .Site.Params.open_projects.str_all }}{{ . }}{{ end }}
                     <i class="fa fa-angle-double-right"></i>
                 </a>
             </p>

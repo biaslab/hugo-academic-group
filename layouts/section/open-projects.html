@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Vacancies</h1>
+            <h1>Open projects</h1>
 
             {{ range .Data.Pages.GroupByDate "2006" }}
             <div class="row" id="pub_list">
@@ -21,7 +21,7 @@
                     
                             <h3><a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a></h3>
                             {{ with .Params.description }}
-                                {{ . | markdownify}}
+                                {{ . }}
                             {{ end }}
                         {{ end }}
                 </div>
