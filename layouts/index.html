@@ -2,6 +2,8 @@
 {{ partial "navbar.html" . }}
 {{ partial "slogan.html" . }}
 
+<!-- About Section -->
+{{ partial "index/about.html" }}
 
 <!-- Projects Section -->
 {{ partial "index/projects.html" . }}
@@ -16,7 +18,7 @@
 {{ partial "index/members.html" . }}
 
 <!-- Vacancies -->
-{{ partial "index/vacancies.html" . }}
+{{ partial "index/open_projects.html" . }}
 
 <!-- Contact Section -->
 {{ if .Site.Params.contact.enable }}

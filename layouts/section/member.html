@@ -2,7 +2,7 @@
 {{ partial "navbar.html" . }}
 
 <div class="container">
-    <h1>Members</h1>
+    <h1>Team</h1>
     {{ range (sort .Data.Pages ".Params.sort_position") }}
         {{ if not .Params.is_former_member }}
             {{partial "member_li" .}}
