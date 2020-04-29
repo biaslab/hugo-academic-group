@@ -133,7 +133,7 @@ h4 {
 
 a, a:visited,
 h3.article-title a:hover {
-    color: #0095eb;
+    color: #006199;
     text-decoration:none;
     transition:color 0.6s ease;
 }
@@ -384,7 +384,7 @@ ul.share li:hover .fa {
  **************************************************/
 
 .article-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 /*h3.article-title a {
@@ -685,7 +685,7 @@ footer a#back_to_top i {
  **************************************************/
 
 .btn-primary {
-    border-color: #0095eb;
+    border-color: #006199;
 }
 
 .btn-primary:hover,
@@ -693,7 +693,7 @@ footer a#back_to_top i {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    background: #0095eb;
+    background: #006199;
 }
 
 /*************************************************
@@ -707,8 +707,8 @@ footer a#back_to_top i {
 }
 
 .btn-primary.btn-outline {
-    color: #0095eb;
-    border-color: #0095eb;
+    color: #006199;
+    border-color: #006199;
 }
 
 .btn-success.btn-outline {
