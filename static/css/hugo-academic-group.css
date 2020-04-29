@@ -313,14 +313,7 @@ span.darknav {
 
 ul.ul-edu {
     list-style: none;
-}
-
-ul.ul-edu li {
-    position: relative;
-    padding: 0px 15px 4px 3px;
-    color: #333333;
-}
-
+}h3
 ul.ul-edu li .description p {
     margin: 0;
 }
@@ -391,7 +384,7 @@ ul.share li:hover .fa {
  **************************************************/
 
 .article-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 /*h3.article-title a {
