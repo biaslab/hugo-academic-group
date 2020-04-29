@@ -1,12 +1,12 @@
 {{ $vacancies_len := len (where .Site.RegularPages "Type" "open-projects") }}
 {{ if gt $vacancies_len 0 }}
-<section id="vacancies" class="home-section">
+<section id="open-projects" class="home-section">
     <div class="container">
        <div class="row">
             
             <!-- Section heading -->
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1><a href="{{.Site.BaseURL}}open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.open_projects.title }}{{ . | markdownify }}{{ end }}</a></h1>
+                <h1><a href="{{.Site.BaseURL}}/open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.open_projects.title }}{{ . | markdownify }}{{ end }}</a></h1>
                 {{ with .Site.Params.open_projects.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
             
@@ -51,7 +51,7 @@
         <!-- Link to all vacancies -->
         <div>
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                <a href="{{ .Site.BaseURL }}/open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">
                     {{ with .Site.Params.open_projects.str_all }}{{ . }}{{ end }}
                     <i class="fa fa-angle-double-right"></i>
                 </a>
