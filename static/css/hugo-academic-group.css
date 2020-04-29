@@ -69,8 +69,8 @@ header{
 html,
 body,
 p {
-    font-family: 'Merriweather', serif;
-    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
     line-height: 1.65;
     min-height: 100%;
     height: 100%;
@@ -279,7 +279,7 @@ span.darknav {
 }
 
 .portrait-title h3 {
-    font-size: 1.13em;
+    font-size: 1.0em;
     font-weight: 400;
     text-align: center;
     color: #AAAAAA;
