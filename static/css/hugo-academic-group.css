@@ -82,7 +82,7 @@ body {
     padding-top: 0;
     counter-reset: captions;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     body {
         /* Offset body content by navbar height. */
         margin-top: 51px;
@@ -799,7 +799,7 @@ nav#navbar-main li {
     text-decoration: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
     .navbar {
         min-height: 50px !important;
     }
