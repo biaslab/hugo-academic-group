@@ -4,18 +4,17 @@
 <div class="container">
     <h1>Team</h1>
     {{ range (sort .Data.Pages ".Params.sort_position") }}
-        {{ if not .Params.is_former_member }}
             {{partial "member_li" .}}
-        {{ end }}
     {{ end }}
 </div>
 
-{{ $alumni_len := len (where .Data.Pages ".Params.is_former_member" true ) }}
+{{ $alumni_len := len (where .Site.RegularPages "Section" "alumni" ) }}
 {{ if gt $alumni_len 0 }}
+
 <div class="container">
     <h1>Alumni</h1>
-    {{ range where .Data.Pages ".Params.is_former_member" true }}
-        {{ partial "member_li" . }}
+    {{ range where .Site.RegularPages "Section" "alumni" }}
+        {{ partial "alumni_li" . }}
     {{ end }}
 {{ end }}
 </div>

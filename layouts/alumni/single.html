@@ -1,0 +1,93 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="col-xs-12 col-md-4">
+        <div id="profile">
+
+            <div class="portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
+
+            <div class="portrait-title">
+                <h2 itemprop="name">{{ .Params.name }}</h2>
+                <h3 itemprop="jobTitle">{{ .Params.role }}</h3>
+                {{ range .Params.organizations }}
+                    <h4>{{ .role }}, {{.name}}</h4>
+                {{ end }}
+            </div>
+
+            <ul class="social-icon">
+                {{ range .Params.social }}
+                <li>
+                    <a href="{{ .link }}">
+                    {{ if eq .icon_pack "ai" }}
+                        <i class="ai ai-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ else }}
+                        <i class="fa fa-{{ .icon }} big-icon" aria-hidden="true"></i>
+                    {{ end }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+
+            <div class="row">
+                {{ with .Params.cv_link }}
+                    <a href="{{.}}">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        Curriculum vitae
+                    </a>
+                {{ end }}
+            </div>
+
+            <div class="row">
+                {{ with .Params.personal_website }}
+                    <a href="{{.}}">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        Personal website
+                    </a>
+                {{ end }}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="visible-sm visible-xs"></div>
+    <div class="col-xs-12 col-md-8" itemprop="description">
+        {{ .Scratch.Add "found" false }}
+            {{ $member_id:= .Params.id }}
+            {{ $projects:= where .Site.Pages "Section" "project" }}
+            {{ range $projects }}
+                {{ $current_project := . }}
+                {{ range .Params.participants }}
+                    {{ if eq .id $member_id }}
+                    {{ if not ($.Scratch.Get "found") }}
+                        <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Projects</h3>
+                            <ul>
+                        {{ $.Scratch.Set "found" true }}
+                    {{ end }}
+                    <li>
+                        <a href="{{$current_project.Permalink}}">{{ $current_project.Title }}</a>
+                    </li>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ if (.Scratch.Get "found") }}
+                </ul>
+                </div>
+            </div>
+            {{ end }}
+            {{ .Scratch.Delete "found" }}
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Biography</h3>
+                 <div class="article-style">{{ .Content }}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

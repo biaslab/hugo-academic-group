@@ -4,13 +4,17 @@
             {{ range first (sub $authors_len 1) . }}
                 {{ if .is_member }}
                     <a href="/member{{.link}}">{{.name}}</a>,
-                {{else}}
+                {{else if .is_former_member}}
+                    <a href="{{.link}}">{{.name}}</a>,
+                {{ else }}
                     {{.name}},
                 {{end}}
             {{ end }}
             {{ range last 1 . }}
                 {{ if .is_member }}
                     <a href="/member{{.link}}">{{.name}}</a>
+                {{else if .is_former_member}}
+                    <a href="{{.link}}">{{.name}}</a>
                 {{else}}
                     {{.name}}
                 {{end}}
@@ -19,6 +23,8 @@
             {{range . }}
                 {{ if .is_member }}
                     <a href="/member{{.link}}">{{.name}}</a>
+                {{else if .is_former_member}}
+                    <a href="{{.link}}">{{.name}}</a>
                 {{else}}
                     {{.name}}
                 {{end}}

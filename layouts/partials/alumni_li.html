@@ -1,0 +1,30 @@
+<div class="row member-info">
+    <div class="col-md-3">
+        <a href="
+            {{with .Params.external_link}}
+                {{ . }}
+            {{else}}
+                {{ .Permalink }}
+            {{end}}"
+        >
+            <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
+        </a>
+        <div class="portrait-title">
+            <h3 itemprop="name"><a href="
+                {{with .Params.external_link}}
+                    {{ . }}
+                {{else}}
+                    {{ .Permalink }}
+                {{end}}"
+            >{{ .Params.name }}</a></h3>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        {{ range .Params.organizations }}
+            <h4>{{ .role }}, {{.name}}</h4>
+            {{ end }}
+        {{ .Params.short_bio | markdownify }}
+    </div>
+
+</div>
