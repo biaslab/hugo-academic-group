@@ -1,11 +1,10 @@
 <div class="row member-info">
     <div class="col-md-3">
-        <a href="
-            {{with .Params.external_link}}
-                {{ . }}
-            {{else}}
-                {{ .Permalink }}
-            {{end}}"
+        <a href="{{with .Params.external_link}}
+                    {{ . }}
+                {{else}}
+                    {{ .Permalink }}
+                {{end}}"
         >
             <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
         </a>
