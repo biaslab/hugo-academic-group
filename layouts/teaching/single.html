@@ -5,7 +5,9 @@
 
     <article class="article article-project" itemscope itemtype="http://schema.org/Article">
         <h1 itemprop="name">{{ .Title }}</h1>
-        <h3> {{.Params.subtitle}} </h3>
+        {{ with .Params.subtitle }}
+            <h3> {{ . }} </h3>
+        {{ end }}
         {{ if eq .Params.participants_block_position "up" }}
         <h3>Instructors</h3>
         <div id="participants">
