@@ -2,32 +2,14 @@
 <div itemprop="author">
         {{if gt $authors_len 1}}
             {{ range first (sub $authors_len 1) . }}
-                {{ if .is_member }}
-                    <a href="/member{{.link}}">{{.name}}</a>,
-                {{else if .is_former_member}}
-                    <a href="{{.link}}">{{.name}}</a>,
-                {{ else }}
-                    {{.name}},
-                {{end}}
+                {{partial "author.html" .}},
             {{ end }}
             {{ range last 1 . }}
-                {{ if .is_member }}
-                    <a href="/member{{.link}}">{{.name}}</a>
-                {{else if .is_former_member}}
-                    <a href="{{.link}}">{{.name}}</a>
-                {{else}}
-                    {{.name}}
-                {{end}}
+                 {{partial "author.html" .}}
             {{end}}
         {{else}}
             {{range . }}
-                {{ if .is_member }}
-                    <a href="/member{{.link}}">{{.name}}</a>
-                {{else if .is_former_member}}
-                    <a href="{{.link}}">{{.name}}</a>
-                {{else}}
-                    {{.name}}
-                {{end}}
+                {{partial "author.html" .}}
             {{end}}
         {{end}}
 </div>
