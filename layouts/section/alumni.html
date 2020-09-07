@@ -1,0 +1,16 @@
+{{ $alumni_len := len (where .Site.RegularPages "Section" "alumni" ) }}
+{{ if gt $alumni_len 0 }}
+
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+  <h1>Alumni</h1>
+  {{ range where .Site.RegularPages "Section" "alumni" }}
+      {{ partial "alumni_li" . }}
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
+
+{{ end }}

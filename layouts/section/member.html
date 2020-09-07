@@ -16,8 +16,9 @@
     {{ range where .Site.RegularPages "Section" "alumni" }}
         {{ partial "alumni_li" . }}
     {{ end }}
-{{ end }}
 </div>
+
+{{ end }}
 
 {{ partial "footer_container.html" . }}
 {{ partial "footer.html" . }}
