@@ -525,6 +525,10 @@ img.in-text {
     padding: 15px;
 }
 
+.author-name {
+    white-space: nowrap;
+}
+
 .article-published-at {
     padding: 15px;
 }
