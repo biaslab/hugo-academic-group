@@ -563,6 +563,7 @@ img.in-text {
 .pub .pub-authors {
     font-style: italic;
     line-height: 30px; /* Match share bar line height. */
+    float:left;
 }
 
 .pub .pub-row-heading {
