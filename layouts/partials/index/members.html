@@ -1,13 +1,13 @@
 <section id="members" class="home-section">
     <div class="container">
-        
+
         <!-- Section heading -->
         <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
-                <h1 class="section-heading"><a href="{{.Site.BaseURL}}/team/{{if .Site.Params.uglyURLs}}index.html{{end}}"> Team </a></h1>
+                <h1 class="section-heading"><a href="{{.Site.BaseURL}}/member/{{if .Site.Params.uglyURLs}}index.html{{end}}"> Team </a></h1>
             </div>
         </div>
-       
+
         <!-- Members -->
         <div class="row">
             {{ range (sort (where .Site.RegularPages "Type" "member") ".Params.sort_position")}}
@@ -16,11 +16,11 @@
                 {{ end }}
             {{ end }}
         </div>
-        
+
         <!-- Link to all members -->
         <div>
             <p class="view-all">
-                <a href="{{ .Site.BaseURL }}/team/{{if .Site.Params.uglyURLs}}index.html{{end}}">
+                <a href="{{ .Site.BaseURL }}/member/{{if .Site.Params.uglyURLs}}index.html{{end}}">
                     Full team
                     <i class="fa fa-angle-double-right"></i>
                 </a>
