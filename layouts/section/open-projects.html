@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <h1>Open projects</h1>
 
-            {{ range .Data.Pages.GroupByDate "2006" }}
+            {{ range (.Data.Pages.GroupByParam "type").Reverse }}
             <div class="row" id="pub_list">
                 <div class="col-md-2">
                     <h3>{{ .Key }}</h3>
@@ -18,7 +18,7 @@
                             {{ else if .Params.external_link }}
                                 {{ .Scratch.Set "link" .Params.external_link }}
                             {{ end }}
-                    
+
                             <h3><a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a></h3>
                             {{ with .Params.description }}
                                 {{ . }}
