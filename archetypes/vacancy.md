@@ -2,6 +2,6 @@
 description = ""
 external_link = ""
 vacancy_id = ""
-type = ""
+vacancy_type = ""
 featured = false
 +++

@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <h1>Open projects</h1>
 
-            {{ range (.Data.Pages.GroupByParam "type").Reverse }}
+            {{ range (.Data.Pages.GroupByParam "vacancy_type").Reverse }}
             <div class="row" id="pub_list">
                 <div class="col-md-2">
                     <h3>{{ .Key }}</h3>
