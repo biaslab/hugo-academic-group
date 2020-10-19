@@ -1,4 +1,3 @@
-layoutdir = "themes/hugo-academic-group/layouts"
 publishdir = "public"
 static = "/static"
 builddrafts = false
