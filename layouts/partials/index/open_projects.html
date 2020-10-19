@@ -3,25 +3,25 @@
 <section id="open-projects" class="home-section">
     <div class="container">
        <div class="row">
-            
+
             <!-- Section heading -->
             <div class="col-xs-12 col-md-4 section-heading">
                 <h1><a href="{{.Site.BaseURL}}/open-projects/{{if .Site.Params.uglyURLs}}index.html{{end}}">{{ with .Site.Params.open_projects.title }}{{ . | markdownify }}{{ end }}</a></h1>
                 {{ with .Site.Params.open_projects.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
             </div>
-            
+
             <!-- Vacancies -->
             <div class="col-xs-12 col-md-8">
-                {{ range first .Site.Params.open_projects.count (where .Site.RegularPages "Type" "open-projects") }}
+                {{ range first .Site.Params.open_projects.count (where (where .Site.RegularPages "Type" "open-projects") ".Params.featured" "==" true) }}
                     <div class="article-list-item">
                         {{ if .Content }}
                             {{ .Scratch.Set "link" .Permalink}}
                         {{ else if .Params.external_link }}
                             {{ .Scratch.Set "link" .Params.external_link}}
                         {{ end }}
-                        
+
                         <h3 class="article-title" itemprop="name">
-                            <a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a>
+                            <a href="{{ .Scratch.Get "link" }}" itemprop="url">({{ .Params.vacancy_type }}) {{ .Title }}</a>
                         </h3>
 
                         {{ with .Params.description }}
@@ -36,7 +36,7 @@
                                 Go to external website
                             </a>
                             {{ end }}
-                            
+
                             {{ if .Content }}
                             <a href="{{ .Scratch.Get "link" }}" class="btn btn-primary btn-outline">
                                 {{ with .Site.Params.posts.str_read_more }}{{ . | markdownify }}{{ end }}
@@ -47,7 +47,7 @@
                 {{ end }}
             </div>
         </div>
-        
+
         <!-- Link to all vacancies -->
         <div>
             <p class="view-all">
