@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/biaslab/hugo-academic-group/blob/master/LICENSE.md"
 description = "A simple theme for academic groups and research departments."
 homepage = "https://github.com/biaslab/hugo-academic-group"
-tags = ["academic", "research", "unversity"]
+tags = ["academic", "research", "university"]
 features = ["blog", "landing"]
 min_version = 0.15
 
