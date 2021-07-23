@@ -57,7 +57,13 @@
                                             style="background-image:url('{{.Site.BaseURL}}/img/portraits/portrait.jpg');"></div>
                                     </a>
                                     <div class="portrait-title">
-                                        <h3 itemprop="name">{{ .name }}</h3>
+                                        <h3 itemprop="name">
+                                            {{if isset  . "external_link"}}
+                                                <a href="{{ .external_link }}">{{ .name }}</a>
+                                            {{else}}
+                                                {{.name}}
+                                            {{end}}
+                                            </h3>
                                         <h4>{{ $current_member.role }}</h4>
                                     </div>
                                 </div>

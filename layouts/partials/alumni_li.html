@@ -1,19 +1,17 @@
-{{if not .Params.hidden_member}}
-    <div class="col-xs-12 col-md-3">
-        <div id="profile">
-            <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
-            <div class="portrait-title">
-                <h3 itemprop="name">
-                    {{if isset .Params "external_link"}}
-                    <a href="{{ .Params.external_link }}">
-                        {{ .Params.name }}
-                    </a>
-                    {{else}}
-                        {{ .Params.name }}
-                    {{end}}
-                </h3>
-            </div>
-
+<div class="col-xs-12 col-md-3">
+    <div id="profile">
+        <div class="small-portrait" itemprop="image" style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Params.portrait }}');"></div>
+        <div class="portrait-title">
+            <h3 itemprop="name">
+                {{if isset .Params "external_link"}}
+                <a href="{{ .Params.external_link }}">
+                    {{ .Params.name }}
+                </a>
+                {{else}}
+                    {{ .Params.name }}
+                {{end}}
+            </h3>
         </div>
+
     </div>
-{{end}}
+</div>
