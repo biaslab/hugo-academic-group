@@ -84,6 +84,12 @@ tag = "tags"
     count = 3
     str_all = "More Vacancies"
 
+  # Team section.
+  [params.team]
+    title = "Team"
+    str_all = "Full team"
+    section_title = "Team" # Can be modified, if for example we list only the main members on the homepage
+
   # Contact section.
   [params.contact]
     enable = true

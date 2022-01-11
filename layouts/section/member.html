@@ -2,7 +2,7 @@
 {{ partial "navbar.html" . }}
 
 <div class="container">
-    <h1>Team</h1>
+    <h1>{{ with .Site.Params.team.section_title }}{{ . | markdownify }}{{ end }}</h1>
     {{ range (sort .Data.Pages ".Params.sort_position") }}
             {{partial "member_li" .}}
     {{ end }}
