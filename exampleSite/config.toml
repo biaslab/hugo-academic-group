@@ -67,6 +67,7 @@ tag = "tags"
     subtitle = ""
     str_all = "More Posts"
     str_read_more = "Read more"
+    section_title = "Posts"
 
   # Projects section.
   # Section will only be displayed if there are projects in `content/project/`.
