@@ -1,0 +1,16 @@
+{{ $guests_len := len (where .Site.RegularPages "Section" "guests" ) }}
+{{ if gt $guests_len 0 }}
+
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container">
+  <h1>Guest Researchers</h1>
+  {{ range where .Site.RegularPages "Section" "guests" }}
+      {{ partial "alumni_li" . }}
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
+
+{{ end }}
