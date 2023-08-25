@@ -69,9 +69,10 @@
                     <div class="col-xs-12 col-sm-3 pub-row-heading">Date</div>
                     <div class="col-xs-12 col-sm-9" itemprop="datePublished">
                         {{ if .Params.to_be_published }}
-                            To be published in
+                            To be published in {{ dateFormat "January, 2006" .Params.publication_date }}
+                        {{ else }}
+                            {{ .Date.Format "January, 2006" }}
                         {{ end }}
-                        {{ .Date.Format "January, 2006" }}
                     </div>
                 </div>
             </div>
