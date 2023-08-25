@@ -8,6 +8,18 @@
     {{ end }}
 </div>
 
+{{ $guests_len := len (where .Site.RegularPages "Section" "guests" ) }}
+{{ if gt $guests_len 0 }}
+
+<div class="container">
+    <h1>Guest Researchers</h1>
+    {{ range where .Site.RegularPages "Section" "guests" }}
+        {{ partial "guests_li" . }} <!-- Assuming you have a 'guest_li' partial to format guest entries, similar to 'alumni_li'. -->
+    {{ end }}
+</div>
+
+{{ end }}
+
 {{ $alumni_len := len (where .Site.RegularPages "Section" "alumni" ) }}
 {{ if gt $alumni_len 0 }}
 
@@ -15,18 +27,6 @@
     <h1>Alumni</h1>
     {{ range where .Site.RegularPages "Section" "alumni" }}
         {{ partial "alumni_li" . }}
-    {{ end }}
-</div>
-
-{{ end }}
-
-{{ $guests_len := len (where .Site.RegularPages "Section" "guests" ) }}
-{{ if gt $guests_len 0 }}
-
-<div class="container">
-    <h1>Guests</h1>
-    {{ range where .Site.RegularPages "Section" "guests" }}
-        {{ partial "guests_li" . }} <!-- Assuming you have a 'guest_li' partial to format guest entries, similar to 'alumni_li'. -->
     {{ end }}
 </div>
 
