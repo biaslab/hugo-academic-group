@@ -124,18 +124,21 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3>Publications</h3>
-                {{ range where .Site.RegularPages "Type" "publication" }}
-                    {{ $found := false }}
-                    {{ range .Params.authors }}
-                        {{ $author_id := trim (printf "%s" .id) " " }}
-                        {{ $member_id := trim $member_id " " }}
-                        {{ if eq $author_id $member_id }}
-                            {{ $found = true }}
-                            {{ break }}
+                {{ $publications := where .Site.RegularPages "Type" "publication" }}
+                {{ range $publications.GroupByDate "2006" }}
+                    {{ range .Pages.ByDate.Reverse }}
+                        {{ $found := false }}
+                        {{ range .Params.authors }}
+                            {{ $author_id := trim (printf "%s" .id) " " }}
+                            {{ $member_id := trim $member_id " " }}
+                            {{ if eq $author_id $member_id }}
+                                {{ $found = true }}
+                                {{ break }}
+                            {{ end }}
                         {{ end }}
-                    {{ end }}
-                    {{ if $found }}
-                        {{ partial "publication_li_detailed" . }}
+                        {{ if $found }}
+                            {{ partial "publication_li_detailed" . }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
 
