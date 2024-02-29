@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Posts</h1>
+            <h1>{{ with .Site.Params.posts.section_title }}{{ . | markdownify }}{{ end }}</h1>
 
             {{ range .Data.Pages.GroupByDate "2006" }}
             <div class="row" id="pub_list">

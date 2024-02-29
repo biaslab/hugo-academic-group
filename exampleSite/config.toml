@@ -67,6 +67,7 @@ tag = "tags"
     subtitle = ""
     str_all = "More Posts"
     str_read_more = "Read more"
+    section_title = "Posts"
 
   # Projects section.
   # Section will only be displayed if there are projects in `content/project/`.
@@ -83,6 +84,21 @@ tag = "tags"
     subtitle = ""
     count = 3
     str_all = "More Vacancies"
+
+  # Team section.
+  [params.team]
+    title = "Team"
+    str_all = "Full team"
+    section_title = "Team" # Can be modified, if for example we list only the main members on the homepage
+
+  # Member card
+  [params.member]
+    subtitle_cv = "Curriculum vitae"
+    subtitle_website = "Personal website"
+    subtitle_interests = "Interests"
+    subtitle_education = "Education"
+    subtitle_projects = "Projects"
+    subtitle_biography = "Biography"
 
   # Contact section.
   [params.contact]
